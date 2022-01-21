@@ -1,0 +1,75 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// Position Screen
+
+.position-card {
+  height: 100%;
+  background: $white;
+  border: 1px solid #F3DDC2;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 10px 32px rgba(#864C05, 0.1);
+    transform: scale(1.02);
+  }
+
+  .head-sec {
+    margin-bottom: 30px;
+
+    .position-title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .designation {
+      font-size: 26px;
+      line-height: 1.2;
+    }
+  }
+
+  .info-sec {
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 0;
+      color:$theme-secondary;
+    }
+
+    .description {
+      color:$theme-secondary;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+  }
+
+  .created {
+    color: $gray-3;
+    opacity: 0.5;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .ant-dropdown-link {
+    width: 24px;
+    height: 24px;
+    background-color: #E8E8F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+
+    .anticon {
+      color: #160B45;
+      font-size: 18px;
+    }
+  }
+}

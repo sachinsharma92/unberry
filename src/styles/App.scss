@@ -1,0 +1,218 @@
+@import url("http://fonts.cdnfonts.com/css/sofia-pro");
+@import "antd/dist/antd.css";
+
+// variables
+@import "./variables/colors";
+@import "./variables/mixins";
+
+// theme styles files
+@import "./xtras";
+// @import './fonts';
+
+// custom css
+* {
+  font-family: "Sofia Pro", sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  // height: 100%;
+}
+
+.app-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 14px;
+}
+
+// img-white
+.img-white {
+  filter: contrast(0) brightness(100);
+}
+
+// Typography Style
+.title1,
+.title2,
+.title3,
+.title4,
+.title5,
+.title6 {
+  margin: 0;
+}
+
+.title1 {
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700;
+}
+
+.title2 {
+  font-size: 36px;
+  line-height: 39px;
+  font-weight: 600;
+}
+
+.title3 {
+  font-size: 1.5rem;
+  line-height: 32px;
+  font-weight: 600;
+
+  // On mobile
+  @include mobile {
+    font-size: 1.3rem;
+  }
+}
+
+.title4 {
+  font-size: 1.3rem;
+  line-height: 39px;
+  font-weight: 600;
+}
+
+.title5 {
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.title6 {
+  font-size: 0.875rem;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+// Button Style here
+.ant-btn-primary {
+  background: $theme-secondary;
+  border: none;
+  height: 45px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+
+  &:hover, &:focus {
+    background: lighten($theme-secondary, 10%);
+  }
+
+  span {
+    position: relative;
+    top: 2px;
+  }
+}
+
+// text Style
+.text-danger {
+  color: $theme-danger;
+}
+
+// logo-white
+.logo-white {
+  img {
+    filter: contrast(0) brightness(100);
+  }
+}
+
+.otp-input-style {
+  display: flex;
+  align-items: center;
+
+  .otpInput {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-right: 20px;
+    border: none;
+    border-bottom: 1px solid rgba($black, 0.3);
+
+    &:hover, &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+}
+
+// main-content-section
+.main-content-section {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+// header primary
+.header-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1C1C1C;
+  height: 70px;
+
+  .ant-menu-dark {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+  }
+
+  .ant-menu-item {
+    font-size: 16px;
+  }
+
+  .button-section {
+    display: flex;
+    align-items: center;
+
+    .btn-gray {
+      background: #323232;
+      border: none;
+      color: #8A8A8A;
+      font-weight: 600;
+      border-radius: 50px;
+      height: 48px;
+      padding: 4px 30px;
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+
+      .text-light {
+        color: #FFFBF6;
+        margin-right: 6px;
+      }
+    }
+
+    .btn-logout {
+
+      .anticon {
+        transform: rotate(90deg);
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    .ant-btn-link {
+      font-weight: 600;
+      color: #8A8A8A;
+      font-size: 18px;
+      margin-left: 20px;
+    }
+  }
+}
