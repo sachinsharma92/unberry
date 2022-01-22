@@ -1,8 +1,16 @@
-import { Button, Col, Row, Input, Menu, Dropdown, Table, Tag, Space } from 'antd';
-import { AudioOutlined, DownOutlined, EllipsisOutlined } from '@ant-design/icons';
-import React from 'react';
+import React, { useState } from 'react';
+import { Button, Col, Row, Input, Menu, Dropdown, Table, Form, Select, Space, Modal } from 'antd';
+import { AudioOutlined, DownOutlined, EllipsisOutlined, CheckOutlined } from '@ant-design/icons';
 import LayoutPrimary from '../../../common/layoutPrimary';
 import PositionDetailCard from '../../../components/positions/positionDetailCard';
+
+// Images
+import gameIcon from '../../../assets/icons/game.svg';
+import viewIcon from '../../../assets/icons/view.svg';
+import sendIcon from '../../../assets/icons/send.svg';
+import closeIcon from '../../../assets/icons/close.svg';
+import shortIcon from '../../../assets/icons/short.svg';
+import removeIcon from "../../../assets/icons/remove.svg";
 
 // Styles
 import './styles.scss';
@@ -31,18 +39,28 @@ const onSearch = value => console.log(value);
 const menu = (
   <Menu>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-        1st menu item
+      <a target="_blank">
+        <img src={viewIcon} className="img-icon" /> View Report
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-        2nd menu item
+      <a target="_blank">
+        <img src={shortIcon} className="img-icon" />  Shortlist
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        3rd menu item
+      <a target="_blank">
+        <img src={closeIcon} className="img-icon" /> Reject
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank">
+        <img src={sendIcon} className="img-icon" />  Resend Invite
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a href="#" className='remove'>
+        <img src={removeIcon} className="img-icon" />  Remove
       </a>
     </Menu.Item>
   </Menu>
@@ -52,46 +70,30 @@ const menu = (
 const columns = [
   {
     title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: text => <a>{text}</a>,
+    dataIndex: 'nameWithEmail',
+    key: 'nameWithEmail',
   },
   {
     title: 'Experience',
-    dataIndex: 'age',
-    key: 'age',
+    dataIndex: 'experience',
+    key: 'experience',
   },
   {
     title: 'Date Invited',
-    dataIndex: 'address',
-    key: 'address',
+    dataIndex: 'dateInvited',
+    key: 'dateInvited',
   },
   {
     title: 'Status',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: tags => (
-      <>
-        {tags.map(tag => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
+    key: 'status',
+    dataIndex: 'status',
   },
   {
     title: 'Action',
     key: 'action',
-    render: (text, record) => (
+    render: () => (
       <Space size="middle">
-        <Dropdown overlay={menu}>
+        <Dropdown overlay={menu} overlayClassName='position-detail-dropdown'>
           <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
             <EllipsisOutlined />
           </a>
@@ -104,28 +106,55 @@ const columns = [
 const data = [
   {
     key: '1',
-    name: 'Chandra Pratap Singh',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
+    nameWithEmail: <div className='table-name-email'><h4 className='title4'>Chandra Pratap Singh</h4> singh.chandrapratap@gmail.com</div>,
+    experience: '2 Years',
+    dateInvited: '22 July, 2021 • 5d ago',
+    status: <div className='shortlisted'>Shortlisted <CheckOutlined /></div>,
   },
   {
     key: '2',
-    name: 'Chandra Pratap Singh',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
+    nameWithEmail: <div className='table-name-email'><h4 className='title4'>Dhruv Goel</h4> dhruv@gmail.com</div>,
+    experience: '2 Years',
+    dateInvited: '22 July, 2021 • 5d ago',
+    status: <div className='rejected'>Rejected</div>,
   },
   {
     key: '3',
-    name: 'Chandra Pratap Singh',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
+    nameWithEmail: <div className='table-name-email'><h4 className='title4'>Anuj Birla</h4> anuj@gmail.com</div>,
+    experience: '2 Years',
+    dateInvited: '22 July, 2021 • 5d ago',
+    status: <div className='recommended'>7.8 • Recommended</div>,
+  },
+  {
+    key: '4',
+    nameWithEmail: <div className='table-name-email'><h4 className='title4'>Joshua David</h4> joshua@gmail.com</div>,
+    experience: '2 Years',
+    dateInvited: '22 July, 2021 • 5d ago',
+    status: <div className='game-start'>Game Started <img src={gameIcon} alt="game-icon" /></div>,
+  },
+  {
+    key: '5',
+    nameWithEmail: <div className='table-name-email'><h4 className='title4'>Neha Agarwal</h4> neha@gmail.com</div>,
+    experience: '2 Years',
+    dateInvited: '22 July, 2021 • 5d ago',
+    status: <div className='invited'>Invited</div>,
   },
 ];
 
 export default function PositionDetailScreen() {
+  const [isInviteCandidateModal, setIsInviteCandidateModal] = useState(false);
+  const inviteCandidateModalToggle = () => {
+    setIsInviteCandidateModal(!isInviteCandidateModal);
+  };
+
+  const onFinish = (values) => {
+    console.log('Success:', values);
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
     <LayoutPrimary className='position-detail-section'>
       <Row>
@@ -145,7 +174,7 @@ export default function PositionDetailScreen() {
           <div className='content-section'>
             <div className='action-section'>
               <h2 className='title2'>5 Candidates</h2>
-              <Button type="primary">+ Invite a Candidate</Button>
+              <Button type="primary" onClick={inviteCandidateModalToggle}>+ Invite a Candidate</Button>
             </div>
 
             <div className='search-section'>
@@ -166,6 +195,46 @@ export default function PositionDetailScreen() {
           </div>
         </Col>
       </Row>
+
+      <Modal wrapClassName="invite-candidate-modal" centered visible={isInviteCandidateModal} onCancel={inviteCandidateModalToggle} footer={false}>
+        <div className='modal-body'>
+          <h2 className='title2'>Invite a <br /> Candidate</h2>
+
+          <Form
+            name="basic"
+            layout="vertical"
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
+          >
+            <Form.Item
+              name="name"
+              rules={[{ required: true, message: 'Please enter your name!' }]}
+            >
+              <Input placeholder='Name' />
+            </Form.Item>
+
+            <Form.Item
+              name="email"
+              rules={[{ type: 'email', message: 'Please enter correct email!' }]}
+            >
+              <Input placeholder='Email' />
+            </Form.Item>
+
+            <Form.Item>
+              <Select placeholder="Select">
+                <Select.Option value="industry-experience">Industry Experience</Select.Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Send Invitation
+              </Button>
+            </Form.Item>
+          </Form>
+        </div>
+      </Modal>
     </LayoutPrimary>
   )
 }

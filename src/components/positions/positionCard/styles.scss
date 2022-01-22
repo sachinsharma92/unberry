@@ -7,7 +7,7 @@
 .position-card {
   height: 100%;
   background: $white;
-  border: 1px solid #F3DDC2;
+  border: 1px solid #f3ddc2;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
   position: relative;
 
   &:hover {
-    box-shadow: 0 10px 32px rgba(#864C05, 0.1);
+    box-shadow: 0 10px 32px rgba(#864c05, 0.1);
     transform: scale(1.02);
   }
 
@@ -39,11 +39,11 @@
       font-size: 28px;
       font-weight: 600;
       margin-bottom: 0;
-      color:$theme-secondary;
+      color: $theme-secondary;
     }
 
     .description {
-      color:$theme-secondary;
+      color: $theme-secondary;
       font-size: 14px;
       line-height: 1.2;
     }
@@ -59,17 +59,57 @@
   .ant-dropdown-link {
     width: 24px;
     height: 24px;
-    background-color: #E8E8F3;
+    background-color: #e8e8f3;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     right: 20px;
+    z-index: 2;
 
     .anticon {
-      color: #160B45;
+      color: #160b45;
       font-size: 18px;
+    }
+
+    &:hover {
+      background-color: $black;
+
+      .anticon {
+        color: white;
+      }
+    }
+  }
+}
+
+.position-custom-dropdown {
+  .ant-dropdown-menu {
+    min-width: 160px;
+    border: 1px solid $border-color;
+  }
+
+  .ant-dropdown-menu-item {
+    padding: 13px 20px;
+  }
+}
+
+.position-card-dropdown {
+  a {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .remove {
+    color: #e25d5d;
+
+    &:hover {
+      color: #e25d5d;
     }
   }
 }
