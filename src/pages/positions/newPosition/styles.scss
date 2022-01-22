@@ -1,0 +1,143 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// auto-section
+
+.new-position-section {
+  .left-section {
+    background: $theme-secondary url("../../../assets/bg/bg2.svg") no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    color: $white;
+    padding: 30px 80px;
+    overflow: hidden;
+
+    .title1 {
+      font-size: 80px;
+      line-height: 1;
+      color: $white;
+      margin-bottom: 30px;
+    }
+
+    .description {
+      color: #cbc4eb;
+      font-size: 20px;
+    }
+
+    .img-illustration {
+      position: absolute;
+      right: 30px;
+      top: 80px;
+      width: 75%;
+    }
+  }
+
+  .right-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title-section {
+      border-top: 2px solid $theme-secondary;
+      margin-bottom: 20px;
+      padding-top: 5px;
+
+      .title4 {
+        font-size: 18px;
+        text-transform: uppercase;
+
+        span {
+          opacity: 0.3;
+        }
+      }
+
+      .description {
+        margin-top: 10px;
+      }
+    }
+
+    .form-inline .ant-form-item-control-input-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .title3 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .ant-form {
+      margin-top: 30px;
+
+      .ant-input {
+        min-height: 40px;
+        border-radius: 0;
+        font-size: 18px;
+        padding: 10px 10px;
+        border-radius: 4px;
+        border-color: $gray-d;
+        background: #f3f3f3;
+        display: flex;
+        align-items: center;
+
+        &:hover,
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+      }
+
+      .ant-btn {
+        height: 43px;
+        border-radius: 50px;
+        background: #160b45;
+        border: none;
+        padding: 4px 20px;
+        display: flex;
+        align-items: center;
+
+        span {
+          position: relative;
+          top: 4px;
+        }
+      }
+    }
+
+    .tag-section {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+
+      .tag-default {
+        margin-right: 10px;
+      }
+    }
+
+    .form-section {
+      padding: 0 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 2;
+    }
+
+    .footer-button {
+      border-top: 1px solid #dbdbdb;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 30px 0px 0;
+
+      .btn-default {
+        margin-right: 10px;
+      }
+    }
+
+    .description {
+      margin: 0;
+    }
+  }
+}

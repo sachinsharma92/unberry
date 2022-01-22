@@ -20,7 +20,19 @@
     color: $theme-secondary;
     font-weight: 600;
     font-size: 16px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+
+    .anticon {
+      margin-right: 10px;
+    }
   }
 
   .head-sec {

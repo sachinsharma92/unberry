@@ -12,7 +12,7 @@ function callback(key) {
   console.log(key);
 }
 
-const operations = <Button type="primary"> + Add New Position</Button>;
+const operations = <Button type="primary" href="/add-new-position"> + Add New Position</Button>;
 
 
 const positionCardData = [
@@ -47,7 +47,7 @@ export default function PositionScreen() {
           </Row>
         </TabPane>
         <TabPane tab={<h1 className='tab-title'>Archived <span>2</span></h1>} key="2">
-        <Row gutter={[24, 24]}>
+          <Row gutter={[24, 24]}>
             {positionCardData.map((data, index) => (
               <Col sm={6} key={index}>
                 <PositionCard positionTitle={data.positionTitle} designation={data.designation} />

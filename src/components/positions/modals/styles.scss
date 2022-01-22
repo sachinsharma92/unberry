@@ -154,3 +154,52 @@
     }
   }
 }
+
+// invite-candidate-modal
+.invite-candidate-modal {
+
+  .modal-body {
+    padding-top: 40px;
+  }
+
+  .title2 {
+    font-size: 50px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+  .ant-input {
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .ant-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .ant-modal-close {
+    width: 40px;
+    height: 40px;
+    background: #F3F3FA;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: 700;
+    top: 20px;
+    right: 20px;
+  }
+}

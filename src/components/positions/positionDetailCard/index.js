@@ -1,7 +1,7 @@
-import { Col, Row, Menu, Dropdown, Button } from 'antd';
+import React from 'react';
+import { Col, Row, Menu, Button } from 'antd';
 import { DownOutlined, ArrowLeftOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import React from 'react';
 
 // Styles
 import './styles.scss';
@@ -26,9 +26,9 @@ export default function PositionDetailCard(props) {
   return (
     <div className='position-detail-card'>
 
-      <Button type="link" className='back-btn' icon={<ArrowLeftOutlined />}>
-        Back
-      </Button>
+      <Link to='/position' className='back-btn'>
+        <ArrowLeftOutlined />  Back
+      </Link>
 
       <Link to={props.cardHandler}>
         <Row>

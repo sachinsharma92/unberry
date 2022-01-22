@@ -120,6 +120,37 @@ p {
   }
 }
 
+.btn-default {
+  background: #F3F3F3;
+  border: none;
+  height: 45px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: $theme-secondary;
+  padding: 4px 20px;
+
+  &:hover, &:focus {
+    background: #F3F3F3;
+    color: $theme-secondary;
+  }
+}
+
+.tag-default {
+  background: #F3F3F3;
+  border: none;
+  height: 45px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  color: $theme-secondary;
+  padding: 4px 20px;
+}
+
 // text Style
 .text-danger {
   color: $theme-danger;
