@@ -1,0 +1,94 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// Position Screen
+
+.position-detail-section {
+  background: #fffbf6;
+  height: calc(100vh - 70px);
+  padding: 0px;
+
+  .title2 {
+    font-size: 30px;
+  }
+
+  .content-section {
+    padding: 50px;
+  }
+
+  .action-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+
+    .button-section {
+      display: flex;
+      margin-left: 50px;
+    }
+
+    .dropdown-button {
+      border-radius: 50px;
+      margin-left: 10px;
+      height: 45px;
+      padding: 4px 20px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      border-color: #EEE3D6;
+
+      span {
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    .ant-input-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    .ant-input {
+      height: 45px;
+      border-color: #EEE3D6;
+      padding-left: 40px;
+      font-size: 16px;
+    }
+
+    .ant-btn-icon-only {
+      background: none;
+      border: none;
+      margin: 6px 2px 2px 10px;
+    }
+
+    .ant-btn {
+    }
+  }
+}
+
+
+// table-section
+.table-section {
+
+  .ant-dropdown-link {
+    width: 24px;
+    height: 24px;
+    background-color: #E8E8F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .anticon {
+      color: #160B45;
+      font-size: 18px;
+    }
+  }
+}
