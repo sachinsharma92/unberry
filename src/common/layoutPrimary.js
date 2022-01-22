@@ -2,7 +2,8 @@ import React from 'react'
 import { Button, Layout, Menu, } from 'antd';
 import { LoginOutlined } from '@ant-design/icons';
 import LogoPrimary from './logoPrimary';
-const { Header, Content, Footer } = Layout;
+import { Link } from 'react-router-dom';
+const { Header, Content } = Layout;
 
 export default function LayoutPrimary(props) {
   return (
@@ -12,10 +13,10 @@ export default function LayoutPrimary(props) {
           <LogoPrimary className="logo-white" />
         </div>
         <Menu theme="dark" defaultSelectedKeys={['2']}>
-          <Menu.Item key={'dashboard'}>Dashboard</Menu.Item>
-          <Menu.Item key={'positions'}>Positions</Menu.Item>
-          <Menu.Item key={'myDna'}>My DNA</Menu.Item>
-          <Menu.Item key={'profile'}>Profile</Menu.Item>
+          <Menu.Item key={'dashboard'}><Link to="/dashboard">Dashboard</Link></Menu.Item>
+          <Menu.Item key={'positions'}><Link to="/position">Positions</Link></Menu.Item>
+          <Menu.Item key={'myDna'}><Link to="/my-dna">My DNA</Link></Menu.Item>
+          <Menu.Item key={'profile'}><Link to="/profile">Profile</Link></Menu.Item>
         </Menu>
 
         <div className='button-section'>

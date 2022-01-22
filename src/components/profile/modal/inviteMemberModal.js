@@ -17,7 +17,7 @@ export default function InviteMemberModal(props) {
 
   return (
     <>
-      <Modal wrapClassName="invite-candidate-modal" centered visible={props.visible} onCancel={props.onCancel} footer={false}>
+      <Modal wrapClassName="invite-candidate-modal" maskStyle={{background: 'rgba(0,0,0,0.8)'}} centered visible={props.visible} onCancel={props.onCancel} footer={false}>
         <div className='modal-body'>
           <h2 className='title2'>Invite a <br /> Member</h2>
           <Form

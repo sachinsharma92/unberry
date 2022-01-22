@@ -1,22 +1,36 @@
-import { Col, Row, Dropdown } from 'antd';
-import { EllipsisOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
 import React from 'react';
+import { Col, Row, Menu, Button } from 'antd';
+import { DownOutlined, ArrowLeftOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './styles.scss';
 
 
-export default function PositionCard(props) {
-  return (
-    <div className='position-card'>
-      <Dropdown overlay={props.menuItems} placement="bottomRight" overlayClassName='position-custom-dropdown'>
-        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-          <EllipsisOutlined />
-        </a>
-      </Dropdown>
+const menu = (
+  <Menu>
+    <Menu.Item icon={<DownOutlined />}>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+        Archive
+      </a>
+    </Menu.Item>
+    <Menu.Item icon={<DownOutlined />}>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+        Remove
+      </a>
+    </Menu.Item>
+  </Menu>
+);
 
-      <Link to="/position-details">
+export default function PositionDetailCard(props) {
+  return (
+    <div className='position-detail-card'>
+
+      <Link to='/position' className='back-btn'>
+        <ArrowLeftOutlined />  Back
+      </Link>
+
+      <Link to={props.cardHandler}>
         <Row>
           <Col sm={24}>
             <div className='head-sec'>

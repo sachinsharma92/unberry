@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Row, Tabs, Menu } from 'antd';
 import LayoutPrimary from '../../common/layoutPrimary';
 import ConfirmationModal from '../../common/confirmationModal';
-import PositionCard from '../../components/positions/positionCard';
+import PositionCard from '../../components/myDna/positionCard';
 
 // images
 import archiveIcon from "../../assets/icons/archive.svg";
@@ -22,23 +22,16 @@ const operations = <Button type="primary" href="/add-new-position"> + Add New Po
 
 const positionCardData = [
   {
-    positionTitle: 'Engineering',
-    designation: 'Senior Backend Developer',
+    designation: 'Engineering',
     positionTitleColor: '#CF3701',
   },
   {
-    positionTitle: 'Design',
-    designation: 'UI UX Designer',
+    designation: 'Marketing',
     positionTitleColor: '#3F34D2',
-  },
-  {
-    positionTitle: 'MBA',
-    designation: 'Sales and Marketing Strategist',
-    positionTitleColor: '#ED7A0F',
   },
 ]
 
-export default function PositionScreen() {
+export default function MyDnaScreen() {
   const [isInviteConfirmModal, setIsInviteConfirmModal] = useState(false);
   const inviteConfirmModalToggle = () => {
     setIsInviteConfirmModal(!isInviteConfirmModal);
@@ -51,8 +44,8 @@ export default function PositionScreen() {
   return (
     <LayoutPrimary className='position-section'>
       <Tabs defaultActiveKey="1" onChange={callback} tabBarExtraContent={operations}>
-        <TabPane tab={<h1 className='tab-title'>Gameplay Positions <span>3</span></h1>} key="1">
-          <Row gutter={[24, 24]}>
+        <TabPane tab={<h1 className='tab-title'>Teams <span>3</span></h1>} key="1">
+          <Row gutter={[10, 10]}>
             {positionCardData.map((data, index) => (
               <Col sm={6} key={index}>
                 <PositionCard
