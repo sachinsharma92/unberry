@@ -9,34 +9,58 @@
     height: 100vh;
     display: flex;
     overflow: hidden;
-
-    &:nth-child(1) {
-      background: olive;
-    }
-    &:nth-child(2) {
-      background: red;
-    }
   }
 
   .content-section {
     width: 100%;
   }
 
+  .text-gradient {
+    background: -webkit-linear-gradient(#2e1500, #c95632);
+    @include clip-text;
+  }
+
+  .menu-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow: hidden;
+    padding: 100px 0;
+    min-width: 80px;
+    max-width: 80px;
+    align-items: center;
+    border-right: 1px solid #dcc797;
+
+    .ant-btn-primary {
+      color: white;
+      padding: 0 18px;
+    }
+
+    a {
+      transform: rotate(270deg);
+      white-space: nowrap;
+      color: #793700;
+    }
+  }
+
+  .boxes-style {
+    border-top: 1px solid $border-color;
+  }
+
   .section-bury {
+    background: #f7f1e5 url("../../assets/bg/gradient-first.svg");
+
     .title {
       font-weight: 100;
       font-size: 100px;
       margin: 0;
-      background: -webkit-linear-gradient(#2e1500, #c95632);
       position: relative;
-      @include clip-text;
     }
     .title-2 {
       font-weight: 500;
       font-size: 100px;
       margin: 0;
-      background: -webkit-linear-gradient(#2e1500, #c95632);
-      @include clip-text;
       position: relative;
     }
 
@@ -87,22 +111,38 @@
     }
   }
 
-  .menu-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    overflow: hidden;
-    padding: 100px 0;
-    min-width: 80px;
-    max-width: 80px;
-    align-items: center;
-    border-right: 1px solid #dcc797;
+  .why-unberry {
+    background-color: #fffcf6;
+    height: auto;
 
-    a {
-      transform: rotate(270deg);
-      white-space: nowrap;
-      color: #793700;
+    .menu-section {
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-section {
+      padding: 50px 30px;
+      background: linear-gradient(262.63deg, rgba(255, 212, 159, 0.05) 8.02%, rgba(255, 130, 180, 0.05) 127.42%);
+      min-height: 279px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon-box-sec {
+      padding: 50px 80px;
+
+      img {
+        width: 70px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .border-section {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
     }
   }
 }
