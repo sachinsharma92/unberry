@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Button, Col, Row, Input, Menu, Dropdown, Table, Space } from 'antd';
 import { AudioOutlined, DownOutlined, EllipsisOutlined, CheckOutlined } from '@ant-design/icons';
 import LayoutPrimary from '../../../common/layoutPrimary';
-import PositionDetailCard from '../../../components/positions/positionDetailCard';
-import InviteCandidateModal from '../../../components/positions/modals/inviteCandidateModal';
+import PositionDetailCard from '../../../components/myDna/positionDetailCard';
 
 // Images
 import gameIcon from '../../../assets/icons/game.svg';
@@ -15,14 +14,8 @@ import removeIcon from "../../../assets/icons/remove.svg";
 
 // Styles
 import './styles.scss';
+import InviteCandidateModal from '../../../components/positions/modals/inviteCandidateModal';
 
-const positionCardData = [
-  {
-    positionTitle: 'Engineering',
-    designation: 'Senior Backend Developer',
-    positionTitleColor: '#CF3701',
-  },
-]
 
 const { Search } = Input;
 
@@ -34,6 +27,13 @@ const suffix = (
     }}
   />
 );
+
+const positionCardData = [
+  {
+    designation: 'Engineering',
+    positionTitleColor: '#CF3701',
+  },
+]
 
 const onSearch = value => console.log(value);
 
@@ -142,7 +142,7 @@ const data = [
   },
 ];
 
-export default function PositionDetailScreen() {
+export default function MyDnaDetailScreen() {
   const [isInviteCandidateModal, setIsInviteCandidateModal] = useState(false);
   const inviteCandidateModalToggle = () => {
     setIsInviteCandidateModal(!isInviteCandidateModal);

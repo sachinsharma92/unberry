@@ -289,21 +289,27 @@ p {
 // traits-style
 .traits-style {
   background: $gray-f5;
-  height: 40px;
+  min-height: 40px;
   margin-bottom: 10px;
   border-radius: 4px;
   overflow-x: hidden;
   position: relative;
 
-  &::before {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    width: 1px;
-    height: 100%;
-    border: 1px dashed $theme-secondary;
-    content: '';
+  &.line-active {
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 1px;
+      height: 100%;
+      border: 1px dashed $theme-secondary;
+      content: '';
+      z-index: 1;
+    }
   }
+
+
 
   &:nth-child(1) {
     &::before {
@@ -336,13 +342,109 @@ p {
   }
 
   .active-style {
-    white-space: nowrap;
-    height: 100%;
+    position: absolute;
+    min-height: 100%;
     padding: 0 20px;
     display: flex;
-    align-items: center;
+    // align-items: center;
+    white-space: nowrap;
+    flex-direction: column;
     font-size: 16px;
     font-weight: 600;
   }
-  
+}
+
+// Position Sidebar Card
+.position-sidebar-card {
+  height: 100vh;
+  overflow-x: scroll;
+  background: $white;
+  border-right: 1px solid #F3DDC2;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease-in-out;
+  position: fixed;
+  max-width: 390px;
+  box-shadow: 0 0 30px rgba(#864C05, 0.1);
+
+  .back-btn {
+    padding: 0;
+    text-align: left;
+    color: $theme-secondary;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    line-height: 0;
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+
+    .anticon {
+      margin-right: 10px;
+    }
+  }
+
+  .head-sec {
+    margin-bottom: 30px;
+
+    .position-title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .designation {
+      font-size: 40px;
+      line-height: 1.2;
+      border-bottom: 3px solid $theme-secondary;
+      padding-bottom: 10px;
+    }
+  }
+
+  .info-sec {
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 0;
+      color:$theme-secondary;
+    }
+
+    .description {
+      color:$theme-secondary;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+  }
+
+  .created {
+    color: $gray-3;
+    opacity: 0.5;
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .ant-dropdown-link {
+    width: 24px;
+    height: 24px;
+    background-color: #E8E8F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+
+    .anticon {
+      color: #160B45;
+      font-size: 18px;
+    }
+  }
+
+  .role-relevant-section {
+    margin-top: 50px;
+  }
 }

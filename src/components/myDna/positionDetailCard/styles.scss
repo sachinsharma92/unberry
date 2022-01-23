@@ -3,7 +3,7 @@
 @import "../../../styles/variables/mixins";
 
 // Position Screen
-.position-detail-card {
+.my-dna-position-detail-card {
   height: 100vh;
   background: $white;
   // border: 1px solid #F3DDC2;
@@ -88,5 +88,9 @@
       color: #160B45;
       font-size: 18px;
     }
+  }
+
+  .role-relevant-section {
+    margin-top: 50px;
   }
 }

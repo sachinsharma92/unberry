@@ -9,31 +9,31 @@ import './styles.scss';
 
 const traitsData = [
   {
-    content: 'Learning Agility',
+    title: 'Learning Agility',
     bgColor: '#A1FC9A',
     textColor: '#00590E',
     percent: '90%'
   },
   {
-    content: 'Ambiguity Tolerance',
+    title: 'Ambiguity Tolerance',
     bgColor: '#A1FC9A',
     textColor: '#00590E',
     percent: '80%'
   },
   {
-    content: 'Sustained Attention',
+    title: 'Sustained Attention',
     bgColor: '#60ECB1',
     textColor: '#00693D',
     percent: '90%'
   },
   {
-    content: 'Pateince',
+    title: 'Pateince',
     bgColor: '#FFDB8F',
     textColor: '#775100',
     percent: '70%'
   },
   {
-    content: 'Context Switching',
+    title: 'Context Switching',
     bgColor: '#FE9EAB',
     textColor:'#71000F',
     percent: '40%'
@@ -50,7 +50,7 @@ export default function PositionCard(props) {
         </a>
       </Dropdown>
 
-      <Link to="/position-details">
+      <Link to="/my-dna-detail">
         <Row>
           <Col sm={24}>
             <div className='head-sec'>
@@ -85,7 +85,7 @@ export default function PositionCard(props) {
           <h4 className='title4'>Role Relevant Traits</h4>
           <div className='progress-bar-section'>
             {traitsData.map((data, index) => (
-              <Traits key={index} content={data.content} bgColor={data.bgColor} percent={data.percent} textColor={data.textColor} />
+              <Traits key={index} title={data.title} bgColor={data.bgColor} percent={data.percent} textColor={data.textColor} className="line-active" />
             ))}
           </div>
         </div>
