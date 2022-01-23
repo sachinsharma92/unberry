@@ -11,7 +11,7 @@
 
 // custom css
 * {
-  font-family: "Sofia Pro", sans-serif !important;
+  font-family: "Messina sans", sans-serif !important;
 }
 
 *,
@@ -162,5 +162,39 @@ p {
 .logo-white {
   img {
     filter: contrast(0) brightness(100);
+  }
+}
+
+.layout-primary {
+  min-height: 100vh;
+
+  // sidebar-section
+  .sidebar-section {
+    max-width: 100px !important;
+    overflow: hidden;
+    position: fixed;
+
+    a {
+      color: white;
+      font-size: 18px;
+      display: flex;
+      transform: rotate(270deg);
+      flex-direction: row-reverse;
+    }
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-layout-footer {
+padding: 0;
+
+    .footer {
+      border-left: 1px solid #DCC797;
+      margin-left: 83px;
+      padding: 20px;
+    }
   }
 }

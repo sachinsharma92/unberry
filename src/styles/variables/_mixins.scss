@@ -239,6 +239,11 @@ $desktop-width-lg: 1500px;
   justify-content: center;
 }
 
+@mixin clip-text() {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 // primary shadow
 $primaryshadow: 0 5px 32px rgba(0, 0, 0, 0.1);
 
@@ -253,4 +258,5 @@ $shadowPrimary: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50
 $shadowSecondary: 0px 0px 1px rgba(12, 26, 75, 0.1), 0px 4px 20px -2px rgba(50, 50, 71, 0.08);
 
 $theme-gradient : linear-gradient(360deg, #FF77A0 -5.06%, #FFBA88 100%);
+
 $theme-light-gradient :linear-gradient(180deg, #FADECF 0%, #F7F0E2 100%);
