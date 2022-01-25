@@ -1,4 +1,4 @@
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row, Form, Input} from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
@@ -32,21 +32,55 @@ const mediaboxData = [
   {
     number: '1',
     title: 'We create your custom screening benchmarks for assesment',
-    description : 'To find out what ‘good’ looks like in each role within the company.',
+    description: 'To find out what ‘good’ looks like in each role within the company.',
     imgUrl: workImg1,
   },
   {
     number: '2',
     title: 'Candidates play remotely and get assessed immediately',
-    description : 'A link with the automated Unberry gameplay takes care of everything.',
+    description: 'A link with the automated Unberry gameplay takes care of everything.',
     imgUrl: workImg2,
   },
   {
     number: '3',
     title: 'You get detailed reports with relevant, predictive insights',
-    description : 'To find out what ‘good’ looks like in each role within the company.',
+    description: 'To find out what ‘good’ looks like in each role within the company.',
     imgUrl: workImg3,
   }
+]
+
+const textBoxData = [
+  {
+    title: 'A Much More Precise Signal',
+    description: 'Improve the efficiency in Hiring. Reduce time to hire by 45% and cost to hire by 88%',
+  },
+  {
+    title: 'Fair and Unbiased Process',
+    description: 'Widen your sourcing pool with a fair and unbiased way of hiring. Increase diversity by 56%',
+  },
+  {
+    title: 'Access to Hidden Talent Pools',
+    description: '46% of people hired are bad hires. Candidate Retention Increases by 77%',
+  },
+  {
+    title: 'Long Lasting Brand Impact',
+    description: 'Candidates find game based assessments to be better experience by 95%.',
+  }
+]
+
+const blogData = [
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, dolor sit amet',
+    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
+  },
+  {
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
+    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
+  },
 ]
 
 export default function HomeScreen() {
@@ -262,7 +296,7 @@ export default function HomeScreen() {
                     {item.description}
                   </div>
                   <div className='img-sec'>
-                  <img src={item.imgUrl} alt="" />
+                    <img src={item.imgUrl} alt="" />
                   </div>
                 </div>
               ))}
@@ -271,72 +305,125 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section ======= */}
-        <section className='section-style'>
-          <div className='menu-section'>
-            <Link to="">05 How it works</Link>
-          </div>
-
-          <div className='content-section'>
-            <Row>
-              <Col sm={20}>
-                <div className='heading-section'>
-                  <h1 className='title1'>Bury Biases</h1>
-                  <h1 className='title1'>Unbury Potential</h1>
-                </div>
-              </Col>
-              <Col sm={4}>
-                <Button type="primary">Book Demo</Button>
-              </Col>
-            </Row>
-            <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
-          </div>
-        </section>
-
-
-        {/* ======= Section ======= */}
-        <section className='section-style'>
+        <section className='section-style why-unberry-2'>
           <div className='menu-section'>
             <Link to="">06 Why UnBerry</Link>
           </div>
           <div className='content-section'>
             <Row>
-              <Col sm={20}>
+              <Col sm={7}>
                 <div className='heading-section'>
-                  <h1 className='title1'>Bury Biases</h1>
-                  <h1 className='title1'>Unbury Potential</h1>
+                  <img src={potentialImage} className='img-icon' alt="" />
+                  <h1 className='title1 text-gradient'>Find the <br /> Perfect <br /> Talent for <br /> Your <br /> Workforce</h1>
                 </div>
               </Col>
-              <Col sm={4}>
-                <Button type="primary">Book Demo</Button>
+              <Col sm={17}>
+                <div className='content-box-section'>
+                  {textBoxData.map((item) => (
+                    <div className='box-style'>
+                      <div className='number'>
+                        {item.number}
+                      </div>
+                      <div className='title'>
+                        {item.title}
+                      </div>
+                      <div className='description'>
+                        {item.description}
+                      </div>
+                      <div className='img-sec'>
+                        <img src={item.imgUrl} alt="" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </Col>
             </Row>
-            <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
           </div>
         </section>
 
-
         {/* ======= Section ======= */}
-        <section className='section-style'>
+        <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
           </div>
+
           <div className='content-section'>
-            <Row>
-              <Col sm={20}>
-                <div className='heading-section'>
-                  <h1 className='title1'>Bury Biases</h1>
-                  <h1 className='title1'>Unbury Potential</h1>
+
+            <div className='heading-section'>
+              <h1 className='title1 text-gradient'>Blog section title goes here</h1>
+              <div className='text-gradient view-all'><a href="">View All</a></div>
+            </div>
+
+            <div className='content-box-section'>
+              {blogData.map((item) => (
+                <div className='box-style'>
+                  <div className='img-sec'>
+                    <img src={item.imgUrl} alt="" />
+                  </div>
+                  <div className='title'>
+                    {item.title}
+                  </div>
+                  <a href="" className='read-more-link'>Read More</a>
                 </div>
-              </Col>
-              <Col sm={4}>
-                <Button type="primary">Book Demo</Button>
-              </Col>
-            </Row>
-            <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
+              ))}
+            </div>
           </div>
         </section>
 
+        <section className='section-style contact-section'>
+          <div className='menu-section'></div>
 
+          <Row className='w-100'>
+            <Col sm={16}>
+
+            </Col>
+            <Col sm={8}>
+              <div className='contact-form-section'>
+              <div className='content'>
+                <p className='text-sm text-gradient'>Book a demo</p>
+                <h4 className='title4'>Take the guesswork out…</h4>
+                <p className='description'>Transform the way you hire - by taking out inefficiencies and biases. By switching to a smarter, unbiased, tech-driven and experiential way of hiring.</p>
+              </div>
+
+              <Form
+                name="basic"
+                autoComplete="off"
+                layout="vertical"
+                className='form-style'
+              >
+                <Form.Item
+                  name="name"
+                  rules={[{ required: true, message: 'Please enter your name!' }]}
+                >
+                  <Input placeholder='Anuj Birla' />
+                </Form.Item>
+
+                <Form.Item
+                  name="email"
+                  rules={[{ type: 'email', message: 'Please enter your email!' }]}
+                >
+                   <Input placeholder='anuj.birla@unberry.com' />
+                </Form.Item>
+
+                <Form.Item
+                  name="role"
+                  rules={[{ required: true, message: 'Please enter your role!' }]}
+                >
+                   <Input placeholder='Role at company' />
+                </Form.Item>
+
+                <Form.Item>
+                  <Button type="primary" htmlType="submit">
+                  Get Started
+                  </Button>
+                </Form.Item>
+              </Form>
+              </div>
+            </Col>
+          </Row>
+
+
+        </section>
       </LayoutPrimary>
     </div>
   )
