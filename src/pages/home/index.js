@@ -1,4 +1,4 @@
-import { Button, Col, Row, Form, Input} from 'antd';
+import { Button, Col, Row, Form, Input } from 'antd';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
@@ -98,13 +98,13 @@ export default function HomeScreen() {
           <div className='content-section'>
             <div className='border-bottom'>
               <div className='heading-section'>
-                <h1 className='title text-gradient'>Bury Biases</h1>
+                <h1 className='title1 text-gradient'>Bury Biases</h1>
               </div>
               <Button type="primary" className='btn-demo'>Book Demo</Button>
             </div>
             <div className='border-bottom'>
               <div className='heading-section'>
-                <h1 className='title-2 text-gradient'>Unbury Potential</h1>
+                <h1 className='title1 bold text-gradient'>Unbury Potential</h1>
               </div>
             </div>
 
@@ -115,14 +115,14 @@ export default function HomeScreen() {
           </div>
         </section>
 
-        {/* ======= Section ======= */}
+        {/* ======= Section Why Unberry ======= */}
         <section className='section-style why-unberry'>
           <div className='menu-section'>
-            <Link to="">Why UnBerry</Link>
+            <Link to="">02 Why UnBerry</Link>
           </div>
           <div className='content-section'>
             <div className='header-section'>
-              <h2 className="title2 text-gradient">“The hiring landscape is rapidly evolving.”</h2>
+              <div className="title-lg text-gradient">“The hiring landscape is rapidly evolving.”</div>
             </div>
             <div className='boxes-style'>
               <Row>
@@ -153,10 +153,10 @@ export default function HomeScreen() {
           </div>
         </section>
 
-        {/* ======= Section ======= */}
+        {/* ======= Section Product  ======= */}
         <section className='section-style product-section'>
           <div className='menu-section'>
-            <Link to="">02 The product</Link>
+            <Link to="">03 The product</Link>
           </div>
           <div className='content-section'>
             <div className='sec-first'>
@@ -215,7 +215,7 @@ export default function HomeScreen() {
                   <div className='heading-section'>
                     <div className='text-sec'>
                       <p className='description'>The Competency Traits</p>
-                      <h1 className='title1'>New age traits for modern workplace traits</h1>
+                      <h1 className='title1'>New age traits for <br /> modern workplace traits</h1>
                     </div>
                   </div>
                 </Col>
@@ -350,8 +350,8 @@ export default function HomeScreen() {
           <div className='content-section'>
 
             <div className='heading-section'>
-              <h1 className='title1 text-gradient'>Blog section title goes here</h1>
-              <div className='text-gradient view-all'><a href="">View All</a></div>
+              <h1 className='title1'>Blog section title goes here</h1>
+              <div className='view-all'><a href="">View All</a></div>
             </div>
 
             <div className='content-box-section'>
@@ -379,50 +379,48 @@ export default function HomeScreen() {
             </Col>
             <Col sm={8}>
               <div className='contact-form-section'>
-              <div className='content'>
-                <p className='text-sm text-gradient'>Book a demo</p>
-                <h4 className='title4'>Take the guesswork out…</h4>
-                <p className='description'>Transform the way you hire - by taking out inefficiencies and biases. By switching to a smarter, unbiased, tech-driven and experiential way of hiring.</p>
-              </div>
+                <div className='content'>
+                  <p className='text-sm'>Book a demo</p>
+                  <h4 className='title4'>Take the guesswork out…</h4>
+                  <p className='description'>Transform the way you hire - by taking out inefficiencies and biases. By switching to a smarter, unbiased, tech-driven and experiential way of hiring.</p>
+                </div>
 
-              <Form
-                name="basic"
-                autoComplete="off"
-                layout="vertical"
-                className='form-style'
-              >
-                <Form.Item
-                  name="name"
-                  rules={[{ required: true, message: 'Please enter your name!' }]}
+                <Form
+                  name="basic"
+                  autoComplete="off"
+                  layout="vertical"
+                  className='form-style'
                 >
-                  <Input placeholder='Anuj Birla' />
-                </Form.Item>
+                  <Form.Item
+                    name="name"
+                    rules={[{ required: true, message: 'Please enter your name!' }]}
+                  >
+                    <Input placeholder='Anuj Birla' />
+                  </Form.Item>
 
-                <Form.Item
-                  name="email"
-                  rules={[{ type: 'email', message: 'Please enter your email!' }]}
-                >
-                   <Input placeholder='anuj.birla@unberry.com' />
-                </Form.Item>
+                  <Form.Item
+                    name="email"
+                    rules={[{ type: 'email', message: 'Please enter your email!' }]}
+                  >
+                    <Input placeholder='anuj.birla@unberry.com' />
+                  </Form.Item>
 
-                <Form.Item
-                  name="role"
-                  rules={[{ required: true, message: 'Please enter your role!' }]}
-                >
-                   <Input placeholder='Role at company' />
-                </Form.Item>
+                  <Form.Item
+                    name="role"
+                    rules={[{ required: true, message: 'Please enter your role!' }]}
+                  >
+                    <Input placeholder='Role at company' />
+                  </Form.Item>
 
-                <Form.Item>
-                  <Button type="primary" htmlType="submit">
-                  Get Started
-                  </Button>
-                </Form.Item>
-              </Form>
+                  <Form.Item>
+                    <Button type="primary" htmlType="submit">
+                      Get Started
+                    </Button>
+                  </Form.Item>
+                </Form>
               </div>
             </Col>
           </Row>
-
-
         </section>
       </LayoutPrimary>
     </div>
