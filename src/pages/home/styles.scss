@@ -11,7 +11,7 @@
   }
 
   .section-style {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     overflow: hidden;
   }
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     padding: 60px 0 100px;
     min-width: 50px;
@@ -138,10 +138,10 @@
 
   .why-unberry {
     background-color: #fffcf6;
-    height: auto;
+    min-height: auto;
 
     .menu-section {
-      height: auto;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -499,7 +499,7 @@
   // Why Unberry section 2
   .why-unberry-2 {
     background-color: #F7F1E5;
-    height: auto;
+    min-height: auto;
 
     .heading-section {
       display: flex;
@@ -524,7 +524,7 @@
     }
 
     .menu-section {
-      height: auto;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -572,11 +572,11 @@
 
   .blog-section {
     background-color: #FFFCF6;
-    height: auto;
+    min-height: auto;
     display: flex;
 
     .menu-section {
-      height: auto;
+      min-height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -682,10 +682,10 @@
 
   .contact-section {
     background-color: $theme-secondary;
-    height: auto;
+    min-height: auto;
 
     .menu-section {
-      height: auto;
+      min-height: auto;
     }
 
     .contact-form-section {
