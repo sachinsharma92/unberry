@@ -1,11 +1,12 @@
 import { Button, Col, Row, Form, Input } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
+import lottie from "lottie-web";
 
 // Images
-import logoFooter from "../../assets/logo-brown.svg"
-import illustrationLine from "../../assets/illustration/line-orange.svg";
+import logoTheme from "../../assets/logo-brown.svg"
+// import illustrationLine from "../../assets/illustration/line-orange.svg";
 import potentialImage from "../../assets/icons/potential.svg";
 import hiresImage from "../../assets/icons/hires.svg";
 import bestfitImage from "../../assets/icons/best-fit.svg";
@@ -23,6 +24,22 @@ import profile4 from "../../assets/icons/profile4.svg";
 import workImg1 from "../../assets/icons/work-img1.svg";
 import workImg2 from "../../assets/icons/work-img2.svg";
 import workImg3 from "../../assets/icons/work-img3.svg";
+
+// Lottie Animation
+import bannerJson from "../../assets/json/banner.json";
+import focusJson from "../../assets/json/focus.json";
+import hireJson from "../../assets/json/hire.json";
+import bestfitJson from "../../assets/json/bestfit.json";
+
+import dynamicJson from "../../assets/json/dynamic.json";
+import beyondJson from "../../assets/json/beyond.json";
+import exhaustiveJson from "../../assets/json/exhaustive.json";
+import psychology from "../../assets/json/psychology.json";
+
+// Videos here
+import unberryMix from "../../assets/video/unberry-mix.mp4";
+import spiderGraph from "../../assets/video/spider-graph.mp4";
+
 
 
 // Styles
@@ -84,23 +101,64 @@ const blogData = [
 ]
 
 export default function HomeScreen() {
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#lottie-banner"),
+      animationData: bannerJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#focus1"),
+      animationData: focusJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#hires2"),
+      animationData: hireJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#bestfit3"),
+      animationData: bestfitJson
+    });
+
+    lottie.loadAnimation({
+      container: document.querySelector("#dynamic"),
+      animationData: dynamicJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#beyond"),
+      animationData: beyondJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#exhaustive"),
+      animationData: exhaustiveJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#psychology"),
+      animationData: psychology
+    });
+  }, []);
+
   return (
     <div className='home-section-style'>
       <LayoutPrimary>
 
+        <div className='mobile-header'>
+          <Link to=""><img src={logoTheme} className='logo-white' alt="logo" /></Link>
+          <Button type="primary" className='btn-demo'>Book Demo</Button>
+        </div>
+
         {/* ======= Section ======= */}
         <section className='section-style section-bury'>
           <div className='menu-section'>
-            <Link to=""><img src={logoFooter} alt="logo-footer" /></Link>
+            <Link to="" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
             <Link to="">Intro 01</Link>
-            <Link to="" className='ant-btn-primary'>BOOK DEMO</Link>
+            <Link to="" className='ant-btn-primary d-xs-none'>BOOK DEMO</Link>
           </div>
           <div className='content-section'>
             <div className='border-bottom'>
               <div className='heading-section'>
                 <h1 className='title1 text-gradient'>Bury Biases</h1>
               </div>
-              <Button type="primary" className='btn-demo'>Book Demo</Button>
+              <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
             </div>
             <div className='border-bottom'>
               <div className='heading-section'>
@@ -110,7 +168,7 @@ export default function HomeScreen() {
 
             <div className='illustration-section'>
               <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
-              <img src={illustrationLine} className='img-style' alt="" />
+              <div className='banner-lottie' id="lottie-banner" />
             </div>
           </div>
         </section>
@@ -128,14 +186,16 @@ export default function HomeScreen() {
               <Row>
                 <Col sm={8}>
                   <div className='icon-box-sec'>
-                    <img src={potentialImage} alt="" />
+                    {/* <img src={potentialImage} alt="" /> */}
+                    <div className='jsonIcon' id="focus1" />
                     <h4 className='title4'>Focus on potential</h4>
                     <p className='description'>Evidence suggests that nearly 50% applicants embellish their CVs, reducing the utility of résumés as initial screening tools.</p>
                   </div>
                 </Col>
                 <Col sm={8}>
                   <div className='icon-box-sec border-section'>
-                    <img src={hiresImage} alt="" />
+                    {/* <img src={hiresImage} alt="" /> */}
+                    <div className='jsonIcon' id="hires2" />
                     <h4 className='title4'>Avoid bad hires</h4>
                     <p className='description'>46% of new hires failed within 18 months. 89% of them were due to attitude or personality issues.</p>
                   </div>
@@ -143,7 +203,8 @@ export default function HomeScreen() {
 
                 <Col sm={8}>
                   <div className='icon-box-sec'>
-                    <img src={bestfitImage} alt="" />
+                    {/* <img src={bestfitImage} alt="" /> */}
+                    <div className='jsonIcon' id="bestfit3" />
                     <h4 className='title4'>Identify your best-fit</h4>
                     <p className='description'>Top Performers yields up to 67% more productivity and profit. Know the key traits required for successful teams.</p>
                   </div>
@@ -168,7 +229,9 @@ export default function HomeScreen() {
                   </div>
                 </Col>
                 <Col sm={7}>
+                  <div className='img-center'>
                   <img src={gameImage} className='product-img1' alt="" />
+                  </div>
                 </Col>
               </Row>
             </div>
@@ -176,25 +239,29 @@ export default function HomeScreen() {
             <Row gutter={50}>
               <Col sm={17}>
                 <div className='video-image'>
+                  <video width="100%" height="100%" muted autoPlay loop playsInline>
+                    <source src={unberryMix} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   <img src={videoImage1} className='img-full' alt="" />
                 </div>
               </Col>
               <Col sm={7}>
                 <div className="img-list">
                   <div className='list'>
-                    <img src={img1} className='img-icon' alt="" />
+                    <div className='img-icon' id="dynamic" />
                     <p className='description'>Dynamic Scenarios & Authentic responses</p>
                   </div>
                   <div className='list'>
-                    <img src={img2} className='img-icon' alt="" />
+                    <div className='img-icon' id="beyond" />
                     <p className='description'>Beyond consciously self reported data</p>
                   </div>
                   <div className='list'>
-                    <img src={img3} className='img-icon' alt="" />
+                    <div className='img-icon' id="exhaustive" />
                     <p className='description'>Exhaustive & Extensive Data Points</p>
                   </div>
                   <div className='list'>
-                    <img src={img4} className='img-icon' alt="" />
+                    <div className='img-icon' id="psychology" />
                     <p className='description'>Based on validated principles of psychology</p>
                   </div>
                 </div>
@@ -221,7 +288,13 @@ export default function HomeScreen() {
                 </Col>
                 <Col sm={7}>
                   <div className='video-image'>
-                    <img src={videoImage2} className='product-img1' alt="" />
+                    <video width="100%" height="100%" muted autoPlay loop playsInline>
+                      <source src={spiderGraph} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className='boxes-description d-xs-visible'>
+                    <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
                   </div>
                 </Col>
               </Row>
@@ -263,7 +336,7 @@ export default function HomeScreen() {
                 </Col>
 
                 <Col sm={7}>
-                  <div className='boxes-description'>
+                  <div className='boxes-description d-xs-none'>
                     <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
                   </div>
                 </Col>
@@ -311,13 +384,13 @@ export default function HomeScreen() {
           </div>
           <div className='content-section'>
             <Row>
-              <Col sm={7}>
+              <Col xs={24} sm={7}>
                 <div className='heading-section'>
                   <img src={potentialImage} className='img-icon' alt="" />
                   <h1 className='title1 text-gradient'>Find the <br /> Perfect <br /> Talent for <br /> Your <br /> Workforce</h1>
                 </div>
               </Col>
-              <Col sm={17}>
+              <Col xs={24} sm={17}>
                 <div className='content-box-section'>
                   {textBoxData.map((item) => (
                     <div className='box-style'>
@@ -372,12 +445,11 @@ export default function HomeScreen() {
 
         <section className='section-style contact-section'>
           <div className='menu-section'></div>
-
           <Row className='w-100'>
-            <Col sm={16}>
-
+            <Col xs={24} sm={16}>
+            <div className='black-section'></div>
             </Col>
-            <Col sm={8}>
+            <Col xs={24} sm={8}>
               <div className='contact-form-section'>
                 <div className='content'>
                   <p className='text-sm'>Book a demo</p>

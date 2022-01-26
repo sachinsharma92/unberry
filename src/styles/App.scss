@@ -58,6 +58,22 @@ p {
   height: 100%;
 }
 
+// d-xs-none
+.d-xs-none {
+
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.d-xs-visible {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
 // Button Style here
 .ant-btn-primary {
   background: $theme-secondary;
