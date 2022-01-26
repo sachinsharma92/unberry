@@ -110,7 +110,7 @@ export default function HomeScreen() {
 
             <div className='illustration-section'>
               <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
-              <img src={illustrationLine} className='img-style' />
+              <img src={illustrationLine} className='img-style' alt="" />
             </div>
           </div>
         </section>
