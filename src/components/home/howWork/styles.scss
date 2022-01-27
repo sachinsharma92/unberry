@@ -1,0 +1,88 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// auto-section
+
+.how-work-card {
+  .media-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .media-box {
+    padding: 50px 30px;
+    
+    @include mobile {
+      padding: 50px 60px 50px 20px;
+    }
+
+    &:nth-child(2) {
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+    }
+  }
+
+  .number {
+    color: $theme-primary;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      display: block;
+      width: 54px;
+      height: 2px;
+      content: '';
+      margin-left: 10px;
+      background: $theme-primary;
+    }
+  }
+
+  .title {
+    font-size: 26px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    color: #313131;
+    max-width: 80%;
+
+    @include mobile {
+      max-width: 100%;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 500;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 27px;
+    color: $theme-primary-dark;
+    font-weight: 500;
+    max-width: 80%;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  .img-sec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    margin-top: 30px;
+    max-height: 210px;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

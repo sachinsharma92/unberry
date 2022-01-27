@@ -1,0 +1,79 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// auto-section
+
+.workforce-card {
+
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .box-style {
+    padding: 50px 30px;
+
+    @include mobile {
+      padding: 80px 20px;
+      max-width: 90%;
+    }
+
+    &:nth-child(1) {
+      border-bottom: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+
+      @include mobile {
+        border: none;
+      }
+    }
+
+    &:nth-child(2) {
+      border-bottom: 1px solid $border-color;
+
+      @include mobile {
+        border: none;
+      }
+    }
+
+    &:nth-child(3) {
+      border-right: 1px solid $border-color;
+
+      @include mobile {
+        border: none;
+      }
+    }
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    font-weight: 500;
+    margin-top: 30px;
+
+    @include mobile {
+      max-width: 90%;
+      font-size: 25px;
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 25px;
+    color: $theme-primary-dark;
+    font-weight: 500;
+    max-width: 80%;
+
+    @include mobile {
+      max-width: 90%;
+    }
+  }
+}

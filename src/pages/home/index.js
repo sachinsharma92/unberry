@@ -4,26 +4,20 @@ import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
 
+import HowWorkCard from '../../components/home/howWork';
+import WorkforceCard from '../../components/home/workforceCard';
+import BlogCard from '../../components/home/blogCard';
+
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
 // import illustrationLine from "../../assets/illustration/line-orange.svg";
 import potentialImage from "../../assets/icons/potential.svg";
-import hiresImage from "../../assets/icons/hires.svg";
-import bestfitImage from "../../assets/icons/best-fit.svg";
 import gameImage from "../../assets/illustration/games.svg";
-import img1 from "../../assets/icons/img1.svg";
-import img2 from "../../assets/icons/img2.svg";
-import img3 from "../../assets/icons/img3.svg";
-import img4 from "../../assets/icons/img4.svg";
 import videoImage1 from "../../assets/video-img1.png";
-import videoImage2 from "../../assets/video-img2.jpg";
 import profile1 from "../../assets/icons/profile1.svg";
 import profile2 from "../../assets/icons/profile2.svg";
 import profile3 from "../../assets/icons/profile3.svg";
 import profile4 from "../../assets/icons/profile4.svg";
-import workImg1 from "../../assets/icons/work-img1.svg";
-import workImg2 from "../../assets/icons/work-img2.svg";
-import workImg3 from "../../assets/icons/work-img3.svg";
 
 // Lottie Animation
 import bannerJson from "../../assets/json/banner.json";
@@ -45,60 +39,6 @@ import spiderGraph from "../../assets/video/spider-graph.mp4";
 // Styles
 import './styles.scss';
 
-const mediaboxData = [
-  {
-    number: '1',
-    title: 'We create your custom screening benchmarks for assesment',
-    description: 'To find out what ‘good’ looks like in each role within the company.',
-    imgUrl: workImg1,
-  },
-  {
-    number: '2',
-    title: 'Candidates play remotely and get assessed immediately',
-    description: 'A link with the automated Unberry gameplay takes care of everything.',
-    imgUrl: workImg2,
-  },
-  {
-    number: '3',
-    title: 'You get detailed reports with relevant, predictive insights',
-    description: 'To find out what ‘good’ looks like in each role within the company.',
-    imgUrl: workImg3,
-  }
-]
-
-const textBoxData = [
-  {
-    title: 'A Much More Precise Signal',
-    description: 'Improve the efficiency in Hiring. Reduce time to hire by 45% and cost to hire by 88%',
-  },
-  {
-    title: 'Fair and Unbiased Process',
-    description: 'Widen your sourcing pool with a fair and unbiased way of hiring. Increase diversity by 56%',
-  },
-  {
-    title: 'Access to Hidden Talent Pools',
-    description: '46% of people hired are bad hires. Candidate Retention Increases by 77%',
-  },
-  {
-    title: 'Long Lasting Brand Impact',
-    description: 'Candidates find game based assessments to be better experience by 95%.',
-  }
-]
-
-const blogData = [
-  {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
-  },
-  {
-    title: 'Lorem ipsum dolor sit amet, dolor sit amet',
-    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
-  },
-  {
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing ',
-    imgUrl: 'https://marketinginsidergroup.com/wp-content/uploads/2020/08/iStock-1198931639-scaled.jpg',
-  },
-]
 
 export default function HomeScreen() {
   useEffect(() => {
@@ -146,7 +86,7 @@ export default function HomeScreen() {
           <Button type="primary" className='btn-demo'>Book Demo</Button>
         </div>
 
-        {/* ======= Section ======= */}
+        {/* ======= Section Bury Biases ======= */}
         <section className='section-style section-bury'>
           <div className='menu-section'>
             <Link to="" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
@@ -162,7 +102,7 @@ export default function HomeScreen() {
             </div>
             <div className='border-bottom'>
               <div className='heading-section'>
-                <h1 className='title1 bold text-gradient'>Unbury Potential</h1>
+                <h1 className='title1 bold text-gradient'>Unbury <span className='line-bottom'></span> Potential</h1>
               </div>
             </div>
 
@@ -230,7 +170,7 @@ export default function HomeScreen() {
                 </Col>
                 <Col sm={7}>
                   <div className='img-center'>
-                  <img src={gameImage} className='product-img1' alt="" />
+                    <img src={gameImage} className='product-img1' alt="" />
                   </div>
                 </Col>
               </Row>
@@ -270,8 +210,8 @@ export default function HomeScreen() {
           </div>
         </section>
 
-        {/* ======= Section ======= */}
-        <section className='section-style product-section-2'>
+        {/* ======= Section Competency ======= */}
+        <section className='section-style competency-section'>
           <div className='menu-section'>
             <Link to="">04 The Competency Traits</Link>
           </div>
@@ -345,7 +285,7 @@ export default function HomeScreen() {
           </div>
         </section>
 
-        {/* ======= Section ======= */}
+        {/* ======= Section How works ======= */}
         <section className='section-style how-works'>
           <div className='menu-section'>
             <Link to="">05 How it works</Link>
@@ -356,29 +296,12 @@ export default function HomeScreen() {
               <h1 className='title1 text-gradient'>“Here's how Unberry works and it’s simply a game changer”</h1>
             </div>
 
-            <div className='media-section'>
-              {mediaboxData.map((item) => (
-                <div className='media-box'>
-                  <div className='number'>
-                    {item.number}
-                  </div>
-                  <div className='title'>
-                    {item.title}
-                  </div>
-                  <div className='description'>
-                    {item.description}
-                  </div>
-                  <div className='img-sec'>
-                    <img src={item.imgUrl} alt="" />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <HowWorkCard/>
           </div>
         </section>
 
-        {/* ======= Section ======= */}
-        <section className='section-style why-unberry-2'>
+        {/* ======= Section Your Workforce ======= */}
+        <section className='section-style your-workforce'>
           <div className='menu-section'>
             <Link to="">06 Why UnBerry</Link>
           </div>
@@ -391,30 +314,13 @@ export default function HomeScreen() {
                 </div>
               </Col>
               <Col xs={24} sm={17}>
-                <div className='content-box-section'>
-                  {textBoxData.map((item) => (
-                    <div className='box-style'>
-                      <div className='number'>
-                        {item.number}
-                      </div>
-                      <div className='title'>
-                        {item.title}
-                      </div>
-                      <div className='description'>
-                        {item.description}
-                      </div>
-                      <div className='img-sec'>
-                        <img src={item.imgUrl} alt="" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <WorkforceCard/>
               </Col>
             </Row>
           </div>
         </section>
 
-        {/* ======= Section ======= */}
+        {/* ======= Section Blog ======= */}
         <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
@@ -427,27 +333,16 @@ export default function HomeScreen() {
               <div className='view-all'><a href="">View All</a></div>
             </div>
 
-            <div className='content-box-section'>
-              {blogData.map((item) => (
-                <div className='box-style'>
-                  <div className='img-sec'>
-                    <img src={item.imgUrl} alt="" />
-                  </div>
-                  <div className='title'>
-                    {item.title}
-                  </div>
-                  <a href="" className='read-more-link'>Read More</a>
-                </div>
-              ))}
-            </div>
+            <BlogCard/>
           </div>
         </section>
 
+        {/* ======= Section Contact ======= */}
         <section className='section-style contact-section'>
           <div className='menu-section'></div>
           <Row className='w-100'>
             <Col xs={24} sm={16}>
-            <div className='black-section'></div>
+              <div className='black-section'></div>
             </Col>
             <Col xs={24} sm={8}>
               <div className='contact-form-section'>
