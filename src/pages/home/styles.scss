@@ -51,15 +51,19 @@
 
     @include mobile {
       min-height: auto;
+      min-width: 30px;
+      max-width: 30px;
     }
 
-    .ant-btn-primary {
+    .link-btn-demo {
       color: white;
-      padding: 2px 18px 0;
+      padding: 0px 18px 0;
       height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: $theme-secondary;
+      border-radius: 50px;
     }
 
     a {
@@ -115,6 +119,9 @@
       }
     }
 
+    .heading-section {
+      width: 100%;
+    }
 
     .title1 {
       font-weight: 300;
@@ -123,10 +130,13 @@
       letter-spacing: -6px;
       margin: 0;
       position: relative;
+      display: flex;
+      align-items: flex-start;
 
       @include mobile {
         font-size: 55px;
         letter-spacing: -2px;
+        flex-direction: column;
       }
 
       @include iphone5 {
@@ -140,8 +150,9 @@
         top: -20px;
 
         @include mobile {
-          font-size: 70px;
+          font-size: 72px;
           top: 10px;
+          font-weight: 600;
         }
 
         @include iphone5 {
@@ -170,7 +181,7 @@
         padding: 0 30px;
 
         @include mobile {
-          padding: 0 20px;
+          padding: 0 10px;
           border-bottom: 1px solid $border-color;
         }
 
@@ -188,20 +199,20 @@
           @include mobile {
             display: none;
           }
+        }
 
-          .btn-demo {
-            margin-bottom: 30px;
-            min-width: 177px;
-            display: flex;
-            height: 58px;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            background: $theme-primary-dark;
-            color: #F7F1E4;
-            font-weight: 600;
-            font-size: 18px;
-          }
+        .btn-demo {
+          margin-bottom: 30px;
+          min-width: 177px;
+          display: flex;
+          height: 58px;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          background: $theme-primary-dark;
+          color: #F7F1E4;
+          font-weight: 600;
+          font-size: 18px;
         }
 
         &.border-bottom-first {
@@ -475,7 +486,8 @@
 
         @include mobile {
           width: 232px;
-          left: -52px;
+          left: -40px;
+          top: 11px;
         }
       }
 
@@ -488,7 +500,8 @@
         object-fit: contain;
 
         @include mobile {
-          left: -25px;
+          left: -20px;
+          bottom: -14px;
         }
       }
     }
@@ -506,6 +519,11 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 24px;
+
+        @include mobile {
+          justify-content: flex-start;
+          padding-left: 10px;
+        }
       }
 
       .img-icon {

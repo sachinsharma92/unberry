@@ -93,7 +93,7 @@ export default function HomeScreen() {
           <div className='menu-section'>
             <Link to="" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
             <Link to="">Intro 01</Link>
-            <Link to="" className='ant-btn-primary d-xs-none'>BOOK DEMO</Link>
+            <Link to="" className='link-btn-demo d-xs-none'>BOOK DEMO</Link>
           </div>
           <div className='content-section'>
             <div className='border-section border-bottom-first'>
