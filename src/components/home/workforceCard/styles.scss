@@ -49,6 +49,10 @@
     }
   }
 
+  .img-icon {
+    width: 70px;
+  }
+
   .title {
     font-size: 30px;
     line-height: 35px;
@@ -66,11 +70,11 @@
   }
 
   .description {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 25px;
     color: $theme-primary-dark;
     font-weight: 500;
-    max-width: 80%;
+    max-width: 90%;
 
     @include mobile {
       max-width: 90%;

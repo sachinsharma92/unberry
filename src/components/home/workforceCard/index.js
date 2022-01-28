@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import potentialImage from "../../../assets/icons/potential.svg";
 
 // Styles
 import './styles.scss';
@@ -28,6 +29,7 @@ export default function WorkforceCard() {
       <div className='grid-layout d-xs-none'>
         {textBoxData.map((item) => (
           <div className='box-style'>
+            <img src={potentialImage} className='img-icon' alt="" />
             <div className='number'>
               {item.number}
             </div>

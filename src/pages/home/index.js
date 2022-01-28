@@ -18,6 +18,8 @@ import profile1 from "../../assets/icons/profile1.svg";
 import profile2 from "../../assets/icons/profile2.svg";
 import profile3 from "../../assets/icons/profile3.svg";
 import profile4 from "../../assets/icons/profile4.svg";
+import demoGroup from "../../assets/demo-group.png";
+
 
 // Lottie Animation
 import bannerJson from "../../assets/json/banner.json";
@@ -94,13 +96,13 @@ export default function HomeScreen() {
             <Link to="" className='ant-btn-primary d-xs-none'>BOOK DEMO</Link>
           </div>
           <div className='content-section'>
-            <div className='border-bottom'>
+            <div className='border-section border-bottom-first'>
               <div className='heading-section'>
                 <h1 className='title1 text-gradient'>Bury Biases</h1>
               </div>
               <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
             </div>
-            <div className='border-bottom'>
+            <div className='border-section border-bottom-second'>
               <div className='heading-section'>
                 <h1 className='title1 bold text-gradient'>Unbury <span className='line-bottom'></span> Potential</h1>
               </div>
@@ -161,7 +163,7 @@ export default function HomeScreen() {
           </div>
           <div className='content-section'>
             <div className='sec-first'>
-              <Row gutter={50} className='h-100'>
+              <Row className='h-100'>
                 <Col sm={17}>
                   <div className='heading-section'>
                     <h1 className='description'>Meet Unberry</h1>
@@ -176,7 +178,7 @@ export default function HomeScreen() {
               </Row>
             </div>
 
-            <Row gutter={50}>
+            <Row>
               <Col sm={17}>
                 <div className='video-image'>
                   <video width="100%" height="100%" muted autoPlay loop playsInline>
@@ -216,32 +218,27 @@ export default function HomeScreen() {
             <Link to="">04 The Competency Traits</Link>
           </div>
           <div className='content-section'>
-            <div className='first-section'>
-              <Row gutter={50}>
-                <Col sm={17}>
-                  <div className='heading-section'>
-                    <div className='text-sec'>
-                      <p className='description'>The Competency Traits</p>
-                      <h1 className='title1'>New age traits for <br /> modern workplace traits</h1>
-                    </div>
+            <Row>
+              <Col sm={17}>
+                <div className='heading-section'>
+                  <div className='text-sec'>
+                    <p className='description'>The Competency Traits</p>
+                    <h1 className='title1'>New age traits for <br /> modern workplace traits</h1>
                   </div>
-                </Col>
-                <Col sm={7}>
-                  <div className='video-image'>
-                    <video width="100%" height="100%" muted autoPlay loop playsInline>
-                      <source src={spiderGraph} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                  <div className='boxes-description d-xs-visible'>
-                    <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
+                </div>
+              </Col>
+              <Col sm={7}>
+                <div className='video-image'>
+                  <video width="100%" height="100%" muted autoPlay loop playsInline>
+                    <source src={spiderGraph} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </Col>
+            </Row>
 
-            <div className='second-section'>
-              <Row gutter={50} className='h-100'>
+            <div className='gradient-section'>
+              <Row>
                 <Col sm={17}>
                   <div className='profile-boxes'>
                     <div className='profile-box-style'>
@@ -274,9 +271,8 @@ export default function HomeScreen() {
                     </div>
                   </div>
                 </Col>
-
                 <Col sm={7}>
-                  <div className='boxes-description d-xs-none'>
+                  <div className='boxes-description'>
                     <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
                   </div>
                 </Col>
@@ -296,7 +292,7 @@ export default function HomeScreen() {
               <h1 className='title1 text-gradient'>“Here's how Unberry works and it’s simply a game changer”</h1>
             </div>
 
-            <HowWorkCard/>
+            <HowWorkCard />
           </div>
         </section>
 
@@ -314,7 +310,7 @@ export default function HomeScreen() {
                 </div>
               </Col>
               <Col xs={24} sm={17}>
-                <WorkforceCard/>
+                <WorkforceCard />
               </Col>
             </Row>
           </div>
@@ -333,7 +329,7 @@ export default function HomeScreen() {
               <div className='view-all'><a href="">View All</a></div>
             </div>
 
-            <BlogCard/>
+            <BlogCard />
           </div>
         </section>
 
@@ -342,7 +338,9 @@ export default function HomeScreen() {
           <div className='menu-section'></div>
           <Row className='w-100'>
             <Col xs={24} sm={16}>
-              <div className='black-section'></div>
+              <div className='gradint-section'>
+                <img src={demoGroup} className='img-full' alt="" />
+              </div>
             </Col>
             <Col xs={24} sm={8}>
               <div className='contact-form-section'>
@@ -362,14 +360,14 @@ export default function HomeScreen() {
                     name="name"
                     rules={[{ required: true, message: 'Please enter your name!' }]}
                   >
-                    <Input placeholder='Anuj Birla' />
+                    <Input placeholder='Enter Name' />
                   </Form.Item>
 
                   <Form.Item
                     name="email"
                     rules={[{ type: 'email', message: 'Please enter your email!' }]}
                   >
-                    <Input placeholder='anuj.birla@unberry.com' />
+                    <Input placeholder='Enter Email' />
                   </Form.Item>
 
                   <Form.Item
