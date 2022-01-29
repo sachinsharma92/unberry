@@ -12,12 +12,12 @@ export default function LayoutPrimary(props) {
           {props.children}
         </div>
       </Content>
-      <Footer>
+      {props.footer && <Footer>
         <div className='footer'>
           <div><img src={logoFooter} alt="logo-footer" /></div>
           <p className='copyright'>© Copyright 2021. UNBERRY. All Rights Reserved.</p>
         </div>
-      </Footer>
+      </Footer>}
     </Layout>
   )
 }

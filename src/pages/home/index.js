@@ -81,17 +81,17 @@ export default function HomeScreen() {
 
   return (
     <div className='home-section-style'>
-      <LayoutPrimary>
+      <LayoutPrimary footer>
 
         <div className='mobile-header'>
-          <Link to=""><img src={logoTheme} className='logo-white' alt="logo" /></Link>
+          <Link to="/"><img src={logoTheme} className='logo-white' alt="logo" /></Link>
           <Button type="primary" className='btn-demo'>Book Demo</Button>
         </div>
 
         {/* ======= Section Bury Biases ======= */}
         <section className='section-style section-bury'>
           <div className='menu-section'>
-            <Link to="" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
+            <Link to="/" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
             <Link to="">Intro 01</Link>
             <Link to="" className='link-btn-demo d-xs-none'>BOOK DEMO</Link>
           </div>
@@ -326,7 +326,7 @@ export default function HomeScreen() {
 
             <div className='heading-section'>
               <h1 className='title1'>Blog section title goes here</h1>
-              <div className='view-all'><a href="">View All</a></div>
+              <div className='view-all'><Link to="/blog">View All</Link></div>
             </div>
 
             <BlogCard />
