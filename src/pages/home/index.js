@@ -96,15 +96,23 @@ export default function HomeScreen() {
             <Link to="" className='link-btn-demo d-xs-none'>BOOK DEMO</Link>
           </div>
           <div className='content-section'>
-            <div className='border-section border-bottom-first'>
-              <div className='heading-section'>
-                <h1 className='title1 text-gradient'>Bury Biases</h1>
+
+            <div className='heading-section'>
+              <div className='d-flex'>
+                <h1 className='title1 text-gradient'>
+                  <span>Bury Biases</span>
+                </h1>
+                <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
               </div>
-              <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
             </div>
-            <div className='border-section border-bottom-second'>
-              <div className='heading-section'>
-                <h1 className='title1 bold text-gradient'>Unbury <span className='line-bottom'></span> Potential</h1>
+
+            <div className='heading-section'>
+              <div className='d-flex'>
+                <h1 className='title1 bold text-gradient'>
+                 <span>Unbury</span> 
+                  <div className='border-style' />
+                  <span>Potential</span> 
+                </h1>
               </div>
             </div>
 
@@ -164,13 +172,13 @@ export default function HomeScreen() {
           <div className='content-section'>
             <div className='sec-first'>
               <Row className='h-100'>
-                <Col sm={17}>
+                <Col xs={24} sm={17}>
                   <div className='heading-section'>
                     <h1 className='description'>Meet Unberry</h1>
                     <h1 className='title1'>Game based assessments for high performing teams</h1>
                   </div>
                 </Col>
-                <Col sm={7}>
+                <Col xs={24} sm={7}>
                   <div className='img-center'>
                     <img src={gameImage} className='product-img1' alt="" />
                   </div>
@@ -235,9 +243,9 @@ export default function HomeScreen() {
                   </video>
                 </div>
 
-                <div className='boxes-description d-xs-visible'>
-                    <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
-                  </div>
+                <div className='boxes-description hide-on-desktop'>
+                  <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
+                </div>
               </Col>
             </Row>
 
@@ -276,7 +284,7 @@ export default function HomeScreen() {
                   </div>
                 </Col>
                 <Col sm={7}>
-                  <div className='boxes-description d-xs-none'>
+                  <div className='boxes-description hide-on-mobile'>
                     <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
                   </div>
                 </Col>

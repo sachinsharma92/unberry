@@ -19,7 +19,7 @@
     padding: 50px 30px;
 
     @include mobile {
-      padding: 80px 20px;
+      padding: 80px 20px 100px;
       max-width: 90%;
     }
 
@@ -70,14 +70,14 @@
   }
 
   .description {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 25px;
     color: $theme-primary-dark;
     font-weight: 500;
     max-width: 90%;
 
     @include mobile {
-      max-width: 90%;
+      max-width: 95%;
     }
   }
 }

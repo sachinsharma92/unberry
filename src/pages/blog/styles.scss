@@ -245,6 +245,7 @@
       }
 
       .line-bottom {
+        margin-right: 15px;
 
         @include mobile {
           width: 100%;
@@ -331,7 +332,7 @@
     }
 
     .content-section {
-      padding: 30px 25px;
+      padding: 50px 25px;
     }
 
     .blog-thumb-image {
@@ -367,7 +368,9 @@
 
         @include mobile {
           font-size: 24px;
+          line-height: 28px;
           max-width: 100%;
+          margin-top: 10px;
         }
       }
 
