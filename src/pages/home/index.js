@@ -234,6 +234,10 @@ export default function HomeScreen() {
                     Your browser does not support the video tag.
                   </video>
                 </div>
+
+                <div className='boxes-description d-xs-visible'>
+                    <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
+                  </div>
               </Col>
             </Row>
 
@@ -272,7 +276,7 @@ export default function HomeScreen() {
                   </div>
                 </Col>
                 <Col sm={7}>
-                  <div className='boxes-description'>
+                  <div className='boxes-description d-xs-none'>
                     <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
                   </div>
                 </Col>

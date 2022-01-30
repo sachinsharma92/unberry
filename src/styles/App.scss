@@ -185,6 +185,10 @@ p {
       display: flex;
       justify-content: center;
       flex-direction: column;
+
+      @include mobile {
+        margin-left: 29px;
+      }
     }
 
     .copyright {

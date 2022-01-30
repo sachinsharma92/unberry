@@ -596,7 +596,7 @@
         font-size: 20px;
 
         @include mobile {
-          font-size: 16px;
+          font-size: 18px;
         }
       }
 
@@ -737,6 +737,7 @@
           font-size: 22px;
           padding: 20px;
           padding-right: 20px;
+          margin-top: 20px;
         }
       }
     }
@@ -943,7 +944,7 @@
         flex-direction: column;
         padding-top: 0px;
         max-width: 85%;
-        margin-bottom: 80px;
+        margin-bottom: 0px;
       }
 
       .title1 {
@@ -969,6 +970,7 @@
           position: absolute;
           bottom: -35px;
           right: 0;
+          font-size: 18px;
         }
       }
     }
@@ -997,7 +999,7 @@
       overflow: hidden;
 
       @include mobile {
-        height: 350px;
+        padding-top: 60px;
       }
 
       .img-full {
@@ -1035,6 +1037,10 @@
       font-size: 28px;
       line-height: 30px;
       font-weight: 600;
+
+      @include mobile {
+        font-size: 22px;
+      }
     }
 
     .text-sm {
