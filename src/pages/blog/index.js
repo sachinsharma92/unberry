@@ -1,5 +1,5 @@
 import { Button, Col, Row } from 'antd';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 
@@ -33,6 +33,14 @@ const blogData = [
 ]
 
 export default function BlogScreen() {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    });
+  }, [])
 
   return (
     <div className='blog-page-style'>

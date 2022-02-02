@@ -48,7 +48,7 @@ export default function WorkforceCard() {
 
       {/* On Mobile */}
       <div className='d-xs-visible'>
-        <Carousel>
+        <Carousel autoplay>
           {textBoxData.map((item) => (
             <div className='box-style'>
               <div className='number'>

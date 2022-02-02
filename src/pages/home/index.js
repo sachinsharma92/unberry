@@ -137,7 +137,7 @@ export default function HomeScreen() {
                 <Col sm={8}>
                   <div className='icon-box-sec'>
                     {/* <img src={potentialImage} alt="" /> */}
-                    <div className='jsonIcon' id="focus1" />
+                    <div className='jsonIcon icon1' id="focus1" />
                     <h4 className='title4'>Focus on potential</h4>
                     <p className='description'>Evidence suggests that nearly 50% applicants embellish their CVs, reducing the utility of résumés as initial screening tools.</p>
                   </div>
@@ -145,7 +145,7 @@ export default function HomeScreen() {
                 <Col sm={8}>
                   <div className='icon-box-sec border-section'>
                     {/* <img src={hiresImage} alt="" /> */}
-                    <div className='jsonIcon' id="hires2" />
+                    <div className='jsonIcon icon2' id="hires2" />
                     <h4 className='title4'>Avoid bad hires</h4>
                     <p className='description'>46% of new hires failed within 18 months. 89% of them were due to attitude or personality issues.</p>
                   </div>
@@ -154,7 +154,7 @@ export default function HomeScreen() {
                 <Col sm={8}>
                   <div className='icon-box-sec'>
                     {/* <img src={bestfitImage} alt="" /> */}
-                    <div className='jsonIcon' id="bestfit3" />
+                    <div className='jsonIcon icon3' id="bestfit3" />
                     <h4 className='title4'>Identify your best-fit</h4>
                     <p className='description'>Top Performers yields up to 67% more productivity and profit. Know the key traits required for successful teams.</p>
                   </div>

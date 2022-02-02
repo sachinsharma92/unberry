@@ -206,6 +206,32 @@ p {
   }
 }
 
+ // Mobile Header
+ .mobile-header {
+  background: rgba(#1A110D, $alpha: 0.9);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+  @include mobile {
+    display: flex;
+  }
+
+  .btn-demo {
+    min-width: 157px;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background: #100C0B;
+    color: #F7F1E4;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
 // workforce card
 .workforce-card {
 

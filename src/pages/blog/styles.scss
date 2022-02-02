@@ -79,32 +79,6 @@
     border-top: 1px solid $border-color;
   }
 
-  // Mobile Header
-  .mobile-header {
-    background: rgba(#1A110D, $alpha: 0.9);
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-
-    @include mobile {
-      display: flex;
-    }
-
-    .btn-demo {
-      min-width: 157px;
-      display: flex;
-      height: 48px;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-      background: #100C0B;
-      color: #F7F1E4;
-      font-weight: 600;
-      font-size: 16px;
-    }
-  }
-
   // Section Bury
   .section-bury {
     background: #f7f1e5 url("../../assets/bg/gradient-first.svg");
@@ -134,7 +108,7 @@
       align-items: flex-start;
 
       @include mobile {
-        font-size: 55px;
+        font-size: 50px;
         letter-spacing: -2px;
         flex-direction: column;
       }
@@ -150,13 +124,13 @@
         top: -20px;
 
         @include mobile {
-          font-size: 72px;
+          font-size: 62px;
           top: 10px;
           font-weight: 600;
         }
 
         @include iphone5 {
-          font-size: 68px;
+          font-size: 60px;
           top: 10px;
         }
       }
@@ -367,7 +341,7 @@
         letter-spacing: -1px;
 
         @include mobile {
-          font-size: 24px;
+          font-size: 20px;
           line-height: 28px;
           max-width: 100%;
           margin-top: 10px;
