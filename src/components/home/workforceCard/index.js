@@ -8,15 +8,15 @@ import './styles.scss';
 const textBoxData = [
   {
     title: 'A Much More Precise Signal',
-    description: 'Improve the efficiency in Hiring. Reduce time to hire by 45% and cost to hire by 88%',
+    description: 'Improve the efficiency in Hiring. Reduce time to hire by 45% and cost to hire by 28%',
   },
   {
-    title: 'Fair and Unbiased Process',
-    description: 'Widen your sourcing pool with a fair and unbiased way of hiring. Increase diversity by 56%',
+    title: 'Fast and Efficient Process',
+    description: 'We increase yield in last round by upto 37%. Reduction in number of rounds by 21%',
   },
   {
     title: 'Access to Hidden Talent Pools',
-    description: '46% of people hired are bad hires. Candidate Retention Increases by 77%',
+    description: `Don't miss out on a great hire early in the process. 35% of them get rejected currently.`,
   },
   {
     title: 'Long Lasting Brand Impact',
@@ -38,9 +38,6 @@ export default function WorkforceCard() {
             </div>
             <div className='description'>
               {item.description}
-            </div>
-            <div className='img-sec'>
-              <img src={item.imgUrl} alt="" />
             </div>
           </div>
         ))}

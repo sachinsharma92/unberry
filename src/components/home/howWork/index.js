@@ -23,7 +23,7 @@ const mediaboxData = [
   {
     number: '3',
     title: 'You get detailed reports with relevant, predictive insights',
-    description: 'To find out what ‘good’ looks like in each role within the company.',
+    description: 'To identify right job-fits and high potential candidates early in the process',
     imgUrl: workImg3,
   }
 ]

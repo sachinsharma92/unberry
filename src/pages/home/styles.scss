@@ -313,7 +313,7 @@
     }
 
     .icon-box-sec {
-      padding: 50px 40px;
+      padding: t0px 40px;
 
       @include mobile {
         padding: 20px;
@@ -341,7 +341,7 @@
 
       @include mobile {
         font-size: 33px;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
         line-height: 1.2;
       }
     }
@@ -349,7 +349,7 @@
     .title4 {
       font-size: 22px;
       font-weight: 500;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
 
       @include mobile {
         font-weight: 600;
@@ -359,7 +359,7 @@
 
     .description {
       font-size: 18px;
-      max-width: 95%;
+      max-width: 98%;
     }
 
     .border-section {
@@ -608,7 +608,7 @@
         font-size: 48px;
         line-height: 65px;
         color: $white;
-        margin-top: 0;
+        margin: 0;
 
         @include mobile {
           font-size: 30px;
@@ -620,7 +620,7 @@
     }
 
     .heading-section {
-      height: 340px;
+      height: 100%;
 
       @include mobile {
         padding: 50px 20px 20px;
@@ -633,7 +633,7 @@
       align-items: center;
       justify-content: center;
       border-top: 1px solid rgba($white, 0.3);
-      height: 340px;
+      height: 320px;
       padding: 20px;
 
       @include mobile {
@@ -672,7 +672,7 @@
       .profile-box-style {
         display: flex;
         align-items: center;
-        padding: 40px;
+        padding: 30px 20px;
 
         @include mobile {
           flex-direction: column;
@@ -694,7 +694,7 @@
         }
 
         .title4 {
-          font-size: 28px;
+          font-size: 26px;
           color: $white;
           margin-bottom: 0;
 
@@ -711,6 +711,7 @@
           line-height: 1.4;
           color: $white;
           max-width: 90%;
+          margin-bottom: 0;
 
           @include mobile {
             font-size: 14px;
@@ -853,7 +854,6 @@
         line-height: 27px;
         color: $theme-primary-dark;
         font-weight: 400;
-        max-width: 80%;
 
         @include mobile {
           max-width: 100%;
@@ -867,7 +867,7 @@
       }
 
       img {
-        margin-top: 30px;
+        margin-top: 40px;
         max-height: 210px;
 
         @include mobile {
@@ -1025,13 +1025,14 @@
       .img-full {
         width: 100%;
         margin-bottom: -22px;
-        margin-left: -20px;
+        margin-left: 0px;
+        transform: scale(1.2);
       }
     }
 
     .contact-form-section {
       background: $white;
-      padding: 100px 50px 50px;
+      padding: 60px 50px;
       height: 100%;
       display: flex;
       flex-direction: column;
@@ -1080,7 +1081,7 @@
       padding-bottom: 5px;
       font-size: 18px;
       font-weight: 500;
-      height: 50px;
+      height: 40px;
 
       &:focus,
       &:hover {

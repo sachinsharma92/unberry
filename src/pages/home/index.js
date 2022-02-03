@@ -138,7 +138,7 @@ export default function HomeScreen() {
 
         <div className='mobile-header'>
           <Link to="/"><img src={logoTheme} className='logo-white' alt="logo" /></Link>
-          <Button type="primary" className='btn-demo'>Book Demo</Button>
+          <Button type="primary" href="#bookDemo" className='btn-demo'>Book Demo</Button>
         </div>
 
         {/* ======= Section Bury Biases ======= */}
@@ -146,7 +146,7 @@ export default function HomeScreen() {
           <div className='menu-section'>
             <Link to="/" className='d-xs-none'><img src={logoTheme} alt="logo" /></Link>
             <Link to="">Intro 01</Link>
-            <Link to="" className='link-btn-demo d-xs-none'>BOOK DEMO</Link>
+            <a href="#bookDemo" className='link-btn-demo d-xs-none'>BOOK DEMO</a>
           </div>
           <div className='content-section'>
 
@@ -155,7 +155,7 @@ export default function HomeScreen() {
                 <h1 className='title1 text-gradient'>
                   <span>Bury Biases</span>
                 </h1>
-                <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
+                <Button type="primary" href="#bookDemo" className='btn-demo d-xs-none'>Book Demo</Button>
               </div>
             </div>
 
@@ -170,7 +170,7 @@ export default function HomeScreen() {
             </div>
 
             <div className='illustration-section'>
-              <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
+              <p className='description'>Combining game technology, data science & neuroscience to disrupt the way companies recruit, retail and develop talent</p>
               <div className='banner-lottie' id="lottie-banner" />
             </div>
           </div>
@@ -284,7 +284,7 @@ export default function HomeScreen() {
                 <div className='heading-section'>
                   <div className='text-sec'>
                     <p className='description'>The Competency Traits</p>
-                    <h1 className='title1'>New age traits for <br /> modern workplace traits</h1>
+                    <h1 className='title1'>New age traits for <br /> modern workplace</h1>
                   </div>
                 </div>
               </Col>
@@ -338,7 +338,7 @@ export default function HomeScreen() {
                 </Col>
                 <Col sm={7}>
                   <div className='boxes-description hide-on-mobile'>
-                    <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
+                    <p className='description'>We report performance on key workplace traits that predict job-fit and potential, backed by data and science.</p>
                   </div>
                 </Col>
               </Row>
@@ -382,7 +382,7 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Blog ======= */}
-        <section className='section-style blog-section'>
+        {/* <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
           </div>
@@ -396,10 +396,10 @@ export default function HomeScreen() {
 
             <BlogCard />
           </div>
-        </section>
+        </section> */}
 
         {/* ======= Section Contact ======= */}
-        <section className='section-style contact-section'>
+        <section className='section-style contact-section' id="bookDemo">
           <div className='menu-section'></div>
           <Row className='w-100'>
             <Col xs={24} sm={16}>
@@ -434,7 +434,7 @@ export default function HomeScreen() {
                     rules={[{ required: true, message: 'Please enter your name!' }]}
                   >
                     <Input placeholder='Enter Name'
-                      //  value={name} onChange={e => setName(e.target.value)}
+                    //  value={name} onChange={e => setName(e.target.value)}
                     />
                   </Form.Item>
 
@@ -442,7 +442,7 @@ export default function HomeScreen() {
                     name="email"
                     rules={[{ type: 'email', required: true, message: 'Please enter your email!' }]}
                   >
-                    <Input placeholder='Enter Email'/>
+                    <Input placeholder='Enter Email' />
                   </Form.Item>
 
                   <Form.Item
