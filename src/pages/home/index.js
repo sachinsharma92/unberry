@@ -1,5 +1,5 @@
-import { Button, Col, Row, Form, Input, Modal } from 'antd';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Button, Col, Row, Form, Input, Modal, notification } from 'antd';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
@@ -81,6 +81,7 @@ export default function HomeScreen() {
     });
   }, []);
 
+  const formRef = useRef(null);
 
   const [isModalCalendly, setIsModalCalendly] = useState(false);
 
@@ -90,23 +91,22 @@ export default function HomeScreen() {
 
   const hideModalCalendly = () => {
     setIsModalCalendly(false);
-    setName("");
-    setEmail("");
-    setDesignation("");
+    formRef.current.resetFields();
   };
 
+  const openNotificationWithIcon = type => {
+    notification[type]({
+      message: 'Error',
+      description:
+        'Oops! Something went wrong',
+    });
+  };
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [designation, setDesignation] = useState("");
-
-
-  const bookADemo = () => {
-    let obj = { name, email, designation }
+  const bookADemo = (values) => {
     axios
       .post(
         "https://prod-api.unberry.com/api/query/v1/create-query",
-        obj, // the data to post'
+        values, // the data to post'
         {
           headers: {
             "Content-type": "application/json",
@@ -114,11 +114,10 @@ export default function HomeScreen() {
         }
       )
       .then((response) => {
-        console.log("response", response);
         showModalCalendly();
       })
       .catch((err) => {
-        console.log("response err", err);
+        openNotificationWithIcon('error');
       });
   }
 
@@ -423,6 +422,7 @@ export default function HomeScreen() {
                   className='form-style'
                   onFinish={bookADemo}
                   preserve={false}
+                  ref={formRef}
                   initialValues={{
                     name: '',
                     email: '',
@@ -433,25 +433,27 @@ export default function HomeScreen() {
                     name="name"
                     rules={[{ required: true, message: 'Please enter your name!' }]}
                   >
-                    <Input placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} />
+                    <Input placeholder='Enter Name'
+                      //  value={name} onChange={e => setName(e.target.value)}
+                    />
                   </Form.Item>
 
                   <Form.Item
                     name="email"
                     rules={[{ type: 'email', required: true, message: 'Please enter your email!' }]}
                   >
-                    <Input placeholder='Enter Email' value={email} onChange={e => setEmail(e.target.value)} />
+                    <Input placeholder='Enter Email'/>
                   </Form.Item>
 
                   <Form.Item
-                    name="role"
+                    name="designation"
                     rules={[{ required: true, message: 'Please enter your role!' }]}
                   >
-                    <Input placeholder='Role at company' value={designation} onChange={e => setDesignation(e.target.value)} />
+                    <Input placeholder='Role at company' />
                   </Form.Item>
 
                   <Form.Item>
-                    <Button type="primary" htmlType="submit" disabled={name === "" || email === "" || designation === ""} onClick={bookADemo}>
+                    <Button type="primary" htmlType="submit" >
                       Get Started
                     </Button>
                   </Form.Item>
