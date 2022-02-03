@@ -463,7 +463,7 @@ export default function HomeScreen() {
                   <div
                     className="calendly-inline-widget"
                     data-url={'https://calendly.com/unberry'}
-                    style={{ minWidth: 320, height: 350 }}
+                    style={{ minWidth: 320, height: '90vh' }}
                   />
                 </Modal>
               </div>
