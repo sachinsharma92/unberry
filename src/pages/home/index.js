@@ -1,5 +1,5 @@
-import { Button, Col, Row, Form, Input } from 'antd';
-import React, { useEffect } from 'react';
+import { Button, Col, Row, Form, Input, Modal } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
@@ -7,6 +7,8 @@ import lottie from "lottie-web";
 import HowWorkCard from '../../components/home/howWork';
 import WorkforceCard from '../../components/home/workforceCard';
 import BlogCard from '../../components/home/blogCard';
+
+import axios from "axios";
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
@@ -79,6 +81,58 @@ export default function HomeScreen() {
     });
   }, []);
 
+
+  const [isModalCalendly, setIsModalCalendly] = useState(false);
+
+  const showModalCalendly = () => {
+    setIsModalCalendly(true);
+  };
+
+  const hideModalCalendly = () => {
+    setIsModalCalendly(false);
+    setName("");
+    setEmail("");
+    setDesignation("");
+  };
+
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [designation, setDesignation] = useState("");
+
+
+  const bookADemo = () => {
+    let obj = { name, email, designation }
+    axios
+      .post(
+        "https://prod-api.unberry.com/api/query/v1/create-query",
+        obj, // the data to post'
+        {
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        console.log("response", response);
+        showModalCalendly();
+      })
+      .catch((err) => {
+        console.log("response err", err);
+      });
+  }
+
+  useEffect(() => {
+    const head = document.querySelector('head');
+    const script = document.createElement('script');
+    script.setAttribute(
+      'src',
+      'https://assets.calendly.com/assets/external/widget.js'
+    );
+    head.appendChild(script);
+  }, [isModalCalendly]);
+
+
   return (
     <div className='home-section-style'>
       <LayoutPrimary footer>
@@ -109,9 +163,9 @@ export default function HomeScreen() {
             <div className='heading-section'>
               <div className='d-flex'>
                 <h1 className='title1 bold text-gradient'>
-                 <span>Unbury</span> 
+                  <span>Unbury</span>
                   <div className='border-style' />
-                  <span>Potential</span> 
+                  <span>Potential</span>
                 </h1>
               </div>
             </div>
@@ -367,34 +421,49 @@ export default function HomeScreen() {
                   autoComplete="off"
                   layout="vertical"
                   className='form-style'
+                  onFinish={bookADemo}
+                  preserve={false}
+                  initialValues={{
+                    name: '',
+                    email: '',
+                    designation: ''
+                  }}
                 >
                   <Form.Item
                     name="name"
                     rules={[{ required: true, message: 'Please enter your name!' }]}
                   >
-                    <Input placeholder='Enter Name' />
+                    <Input placeholder='Enter Name' value={name} onChange={e => setName(e.target.value)} />
                   </Form.Item>
 
                   <Form.Item
                     name="email"
-                    rules={[{ type: 'email', message: 'Please enter your email!' }]}
+                    rules={[{ type: 'email', required: true, message: 'Please enter your email!' }]}
                   >
-                    <Input placeholder='Enter Email' />
+                    <Input placeholder='Enter Email' value={email} onChange={e => setEmail(e.target.value)} />
                   </Form.Item>
 
                   <Form.Item
                     name="role"
                     rules={[{ required: true, message: 'Please enter your role!' }]}
                   >
-                    <Input placeholder='Role at company' />
+                    <Input placeholder='Role at company' value={designation} onChange={e => setDesignation(e.target.value)} />
                   </Form.Item>
 
                   <Form.Item>
-                    <Button type="primary" htmlType="submit">
+                    <Button type="primary" htmlType="submit" disabled={name === "" || email === "" || designation === ""} onClick={bookADemo}>
                       Get Started
                     </Button>
                   </Form.Item>
                 </Form>
+
+                <Modal centered visible={isModalCalendly} footer={false} onCancel={hideModalCalendly}>
+                  <div
+                    className="calendly-inline-widget"
+                    data-url={'https://calendly.com/unberry'}
+                    style={{ minWidth: 320, height: 350 }}
+                  />
+                </Modal>
               </div>
             </Col>
           </Row>
