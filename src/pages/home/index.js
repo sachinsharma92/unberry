@@ -192,7 +192,7 @@ export default function HomeScreen() {
                     {/* <img src={potentialImage} alt="" /> */}
                     <div className='jsonIcon icon1' id="focus1" />
                     <h4 className='title4'>Focus on potential</h4>
-                    <p className='description'>Evidence suggests that nearly 50% applicants embellish their CVs, reducing the utility of résumés as initial screening tools.</p>
+                    <p className='description'>Widen your sourcing pool with an unbiased way of hiring. Increase diversity by 56%</p>
                   </div>
                 </Col>
                 <Col sm={8}>
@@ -200,7 +200,7 @@ export default function HomeScreen() {
                     {/* <img src={hiresImage} alt="" /> */}
                     <div className='jsonIcon icon2' id="hires2" />
                     <h4 className='title4'>Avoid bad hires</h4>
-                    <p className='description'>46% of new hires failed within 18 months. 89% of them were due to attitude or personality issues.</p>
+                    <p className='description'>Improve the efficiency in hiring. Reduce time to hire by 45% and cost to hire by 88%</p>
                   </div>
                 </Col>
 
@@ -280,7 +280,7 @@ export default function HomeScreen() {
           </div>
           <div className='content-section'>
             <Row>
-              <Col sm={17}>
+              <Col xs={24} sm={17}>
                 <div className='heading-section'>
                   <div className='text-sec'>
                     <p className='description'>The Competency Traits</p>
@@ -288,7 +288,7 @@ export default function HomeScreen() {
                   </div>
                 </div>
               </Col>
-              <Col sm={7}>
+              <Col xs={24} sm={7}>
                 <div className='video-image'>
                   <video width="100%" height="100%" muted autoPlay loop playsInline>
                     <source src={spiderGraph} type="video/mp4" />

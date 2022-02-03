@@ -313,7 +313,7 @@
     }
 
     .icon-box-sec {
-      padding: t0px 40px;
+      padding: 20px 40px;
 
       @include mobile {
         padding: 20px;
@@ -359,7 +359,7 @@
 
     .description {
       font-size: 18px;
-      max-width: 98%;
+      max-width: 87%;
     }
 
     .border-section {
@@ -457,10 +457,11 @@
         max-width: 80%;
 
         @include mobile {
-          font-size: 35px;
-          line-height: 45px;
+          font-size: 30px;
+          line-height: 37px;
           max-width: 90%;
           font-weight: 500;
+          padding-bottom: 20px;
         }
       }
     }
@@ -592,6 +593,10 @@
       justify-content: center;
       padding-left: 50px;
 
+      @include mobile {
+        border: none;
+      }
+
       .description {
         color: $white;
         text-transform: uppercase;
@@ -623,7 +628,7 @@
       height: 100%;
 
       @include mobile {
-        padding: 50px 20px 20px;
+        padding: 50px 20px;
         border-top: 1px solid rgba($white, 0.3);
       }
     }
@@ -894,7 +899,7 @@
 
       @include mobile {
         height: auto;
-        width: 100%;
+        width: 95%;
         border-right: none;
         padding: 50px 20px;
       }
