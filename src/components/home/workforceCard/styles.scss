@@ -16,7 +16,7 @@
   }
 
   .box-style {
-    padding: 40px 30px;
+    padding: 50px 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +54,10 @@
     .img-box {
       height: 60px;
       position: relative;
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
   
       img {
         position: absolute;
@@ -67,7 +71,23 @@
     &:nth-child(2) {
       img {
         transform: scale(1.4);
+
+        @include mobile {
+          transform: scale(2.2);
+        }
       }
+    }
+
+    &:nth-child(3) {
+      img {
+        transform: scale(0.95);
+      }
+    }
+
+    .icon-style {
+  @include mobile {
+    transform: scale(1.5);
+}
     }
   }
 

@@ -322,6 +322,10 @@
 
       .jsonIcon {
         width: 120px;
+
+        @include mobile {
+          width: 100px;
+        }
       }
 
       .icon1, .icon3 {
@@ -353,7 +357,7 @@
 
       @include mobile {
         font-weight: 600;
-        font-size: 27px;
+        font-size: 25px;
       }
     }
 
@@ -645,6 +649,7 @@
         border-top: 1px solid rgba($white, 0.3);
         padding-top: 30px;
         height: auto;
+        padding: 20px 5px;
       }
 
       video {

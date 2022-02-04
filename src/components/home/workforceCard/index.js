@@ -19,6 +19,7 @@ const textBoxData = [
     imgUrl: FastEfficient,
     title: 'Fast and Efficient Process',
     description: 'We increase yield in last round by upto 37%. Reduction in number of rounds by 21%',
+    imgStyle: 'icon-style'
   },
   {
     imgUrl: accessHidden,
@@ -58,6 +59,9 @@ export default function WorkforceCard() {
         <Carousel autoplay>
           {textBoxData.map((item) => (
             <div className='box-style'>
+              <div className='img-box'>
+                <img className={item.imgStyle} src={item.imgUrl} alt="" />
+              </div>
               <div className='number'>
                 {item.number}
               </div>
@@ -66,9 +70,6 @@ export default function WorkforceCard() {
               </div>
               <div className='description'>
                 {item.description}
-              </div>
-              <div className='img-sec'>
-                <img src={item.imgUrl} alt="" />
               </div>
             </div>
           ))}

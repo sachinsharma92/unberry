@@ -16,10 +16,12 @@ import logoTheme from "../../assets/logo-brown.svg"
 import potentialImage from "../../assets/icons/potential.svg";
 import gameImage from "../../assets/illustration/games.svg";
 import videoImage1 from "../../assets/video-img1.png";
-import profile1 from "../../assets/icons/profile1.svg";
-import profile2 from "../../assets/icons/profile2.svg";
-import profile3 from "../../assets/icons/profile3.svg";
-import profile4 from "../../assets/icons/profile4.svg";
+
+import cognitiveJson from "../../assets/json/cognitive.json";
+import behaviouralJson from "../../assets/json/behavioural.json";
+import intelligenceJson from "../../assets/json/intelligence.json";
+import thinkingJson from "../../assets/json/thinking.json";
+
 import demoGroup from "../../assets/demo-group.png";
 
 
@@ -82,6 +84,24 @@ export default function HomeScreen() {
     lottie.loadAnimation({
       container: document.querySelector("#jsonSpider"),
       animationData: spiderGraph
+    });
+
+    lottie.loadAnimation({
+      container: document.querySelector("#cognitiveJson"),
+      animationData: cognitiveJson
+    });
+
+    lottie.loadAnimation({
+      container: document.querySelector("#thinkingJson"),
+      animationData: behaviouralJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#intelligenceJson"),
+      animationData: intelligenceJson
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#behaviouralJson"),
+      animationData: thinkingJson
     });
   }, []);
 
@@ -308,28 +328,28 @@ export default function HomeScreen() {
                 <Col sm={17}>
                   <div className='profile-boxes'>
                     <div className='profile-box-style'>
-                      <img src={profile1} className='img-icon' alt="" />
+                      <div className='competency-json' id="cognitiveJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Cognitive Profile</h4>
                         <p className='description'>How they process information & knowledge mentally</p>
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                      <img src={profile2} className='img-icon' alt="" />
+                    <div className='competency-json' id="thinkingJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Thinking Profile</h4>
                         <p className='description'>How they learn concepts & organise their thoughts </p>
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                      <img src={profile3} className='img-icon' alt="" />
+                    <div className='competency-json' id="intelligenceJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Intelligence Profile</h4>
                         <p className='description'>How they isolate and navigate complex problems</p>
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                      <img src={profile4} className='img-icon' alt="" />
+                    <div className='competency-json' id="behaviouralJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Behavioural Profile</h4>
                         <p className='description'>How they control and conduct themselves </p>
@@ -463,7 +483,7 @@ export default function HomeScreen() {
                 <Modal centered visible={isModalCalendly} footer={false} onCancel={hideModalCalendly}>
                   <div
                     className="calendly-inline-widget"
-                    data-url={'https://calendly.com/unberry'}
+                    data-url={'https://calendly.com/unberry/30min'}
                     style={{ minWidth: 320, height: '90vh' }}
                   />
                 </Modal>
