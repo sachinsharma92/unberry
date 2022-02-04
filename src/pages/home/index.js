@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button, Col, Row, Form, Input, Modal, notification } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
 
@@ -47,6 +47,8 @@ import './styles.scss';
 
 
 export default function HomeScreen() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#lottie-banner"),
@@ -138,7 +140,7 @@ export default function HomeScreen() {
         }
       )
       .then((response) => {
-        showModalCalendly();
+        handleClick();
       })
       .catch((err) => {
         openNotificationWithIcon('error');
@@ -155,6 +157,10 @@ export default function HomeScreen() {
     head.appendChild(script);
   }, [isModalCalendly]);
 
+
+  const handleClick = () => {
+    window.open('https://calendly.com/unberry/30min');
+  }
 
   return (
     <div className='home-section-style'>
@@ -314,7 +320,7 @@ export default function HomeScreen() {
               </Col>
               <Col xs={24} sm={7}>
                 <div className='video-image'>
-                <div className='jsonSpider' id="jsonSpider" />
+                  <div className='jsonSpider' id="jsonSpider" />
                 </div>
 
                 <div className='boxes-description hide-on-desktop'>
@@ -335,21 +341,21 @@ export default function HomeScreen() {
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                    <div className='competency-json' id="thinkingJson" />
+                      <div className='competency-json' id="thinkingJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Thinking Profile</h4>
                         <p className='description'>How they learn concepts & organise their thoughts </p>
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                    <div className='competency-json' id="intelligenceJson" />
+                      <div className='competency-json' id="intelligenceJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Intelligence Profile</h4>
-                        <p className='description'>How they isolate and navigate complex problems</p>
+                        <p className='description'>How they isolate & navigate complex problems</p>
                       </div>
                     </div>
                     <div className='profile-box-style'>
-                    <div className='competency-json' id="behaviouralJson" />
+                      <div className='competency-json' id="behaviouralJson" />
                       <div className='text-sec'>
                         <h4 className='title4'>Behavioural Profile</h4>
                         <p className='description'>How they control and conduct themselves </p>
@@ -452,7 +458,7 @@ export default function HomeScreen() {
                 >
                   <Form.Item
                     name="name"
-                    rules={[{ required: true, message: 'Please enter your name!' }]}
+                  rules={[{ required: true, }]}
                   >
                     <Input placeholder='Enter Name'
                     //  value={name} onChange={e => setName(e.target.value)}
@@ -461,14 +467,14 @@ export default function HomeScreen() {
 
                   <Form.Item
                     name="email"
-                    rules={[{ type: 'email', required: true, message: 'Please enter your email!' }]}
+                  rules={[{ type: 'email', required: true,}]}
                   >
                     <Input placeholder='Enter Email' />
                   </Form.Item>
 
                   <Form.Item
                     name="designation"
-                    rules={[{ required: true, message: 'Please enter your role!' }]}
+                  rules={[{ required: true,}]}
                   >
                     <Input placeholder='Role at company' />
                   </Form.Item>
@@ -480,13 +486,13 @@ export default function HomeScreen() {
                   </Form.Item>
                 </Form>
 
-                <Modal centered visible={isModalCalendly} footer={false} onCancel={hideModalCalendly}>
+                {/* <Modal centered visible={isModalCalendly} footer={false} onCancel={hideModalCalendly}>
                   <div
                     className="calendly-inline-widget"
                     data-url={'https://calendly.com/unberry/30min'}
                     style={{ minWidth: 320, height: '90vh' }}
                   />
-                </Modal>
+                </Modal> */}
               </div>
             </Col>
           </Row>
