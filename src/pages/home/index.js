@@ -28,6 +28,7 @@ import bannerJson from "../../assets/json/banner.json";
 import focusJson from "../../assets/json/focus.json";
 import hireJson from "../../assets/json/hire.json";
 import bestfitJson from "../../assets/json/bestfit.json";
+import spiderGraph from "../../assets/json/spider-graph.json";
 
 import dynamicJson from "../../assets/json/dynamic.json";
 import beyondJson from "../../assets/json/beyond.json";
@@ -36,7 +37,6 @@ import psychology from "../../assets/json/psychology.json";
 
 // Videos here
 import unberryMix from "../../assets/video/unberry-mix.mp4";
-import spiderGraph from "../../assets/video/spider-graph.mp4";
 
 
 
@@ -78,6 +78,10 @@ export default function HomeScreen() {
     lottie.loadAnimation({
       container: document.querySelector("#psychology"),
       animationData: psychology
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#jsonSpider"),
+      animationData: spiderGraph
     });
   }, []);
 
@@ -290,10 +294,7 @@ export default function HomeScreen() {
               </Col>
               <Col xs={24} sm={7}>
                 <div className='video-image'>
-                  <video width="100%" height="100%" muted autoPlay loop playsInline>
-                    <source src={spiderGraph} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                <div className='jsonSpider' id="jsonSpider" />
                 </div>
 
                 <div className='boxes-description hide-on-desktop'>

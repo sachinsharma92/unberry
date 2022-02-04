@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="45px" viewBox="0 0 45 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+    <defs>
+        <linearGradient x1="3.50992304%" y1="50%" x2="94.7355014%" y2="59.09%" id="linearGradient-1">
+            <stop stop-color="#FF864E" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#CF5F2B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="92.7779764%" y1="41.0186996%" x2="2.49076391%" y2="41.0186996%" id="linearGradient-2">
+            <stop stop-color="#FF864E" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#CF5F2B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="fast-efficient" transform="translate(12.000000, 6.000000)">
+            <polygon id="Path" stroke="#FF864E" stroke-width="2" points="11.9797936 11.90897 21 11.90897 6.06573124 32 9.4898084 20.3069139 9.8364932 19.1228144 8.61271687 19.1228144 0 19.1228144 14.6453617 0 11.1122128 10.6945137 10.7109327 11.90897"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero" points="9 18 8.5789173 20 7 20 7 18"></polygon>
+            <polygon id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero" points="12 13 12.3748461 11 14 11 14 13"></polygon>
+        </g>
+    </g>
+</svg>

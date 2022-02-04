@@ -50,6 +50,25 @@
         border: none;
       }
     }
+
+    .img-box {
+      height: 60px;
+      position: relative;
+  
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &:nth-child(2) {
+      img {
+        transform: scale(1.4);
+      }
+    }
   }
 
   .img-icon {
