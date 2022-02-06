@@ -5,7 +5,7 @@
 .blog-detail-section {
   background-color: #F7F1E5;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, #1C1C1C 350px, transparent 20%);
+  background-image: linear-gradient(to bottom, $theme-secondary 450px, transparent 20%);
   padding-top: 50px;
 
   .title2 {
@@ -26,5 +26,25 @@
     padding: 20px 0px;
     font-size: 16px;
     margin: 0;
+  }
+
+  .btn-back {
+    background: lighten($theme-secondary, 5%);
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $white;
+    margin-bottom: 30px;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      background: lighten($theme-secondary, 8%);
+    }
   }
 }
