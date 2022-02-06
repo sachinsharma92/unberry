@@ -49,6 +49,7 @@ import './styles.scss';
 export default function HomeScreen() {
   const navigate = useNavigate();
 
+  const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#lottie-banner"),
@@ -156,6 +157,14 @@ export default function HomeScreen() {
     );
     head.appendChild(script);
   }, [isModalCalendly]);
+
+  useEffect(() => {
+    axios.get('https://cms-api.unberry.com/api/v1/collection').then(res => {
+      setBlogs(res?.data?.data)
+    }).catch(err => {
+      console.log('blog data err', err)
+    })
+  }, [])
 
 
   const handleClick = () => {
@@ -420,8 +429,7 @@ export default function HomeScreen() {
               <h1 className='title1'>Blog section title goes here</h1>
               <div className='view-all'><Link to="/blog">View All</Link></div>
             </div>
-
-            <BlogCard />
+              <BlogCard data={blogs} />
           </div>
         </section>
 
