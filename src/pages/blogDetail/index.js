@@ -18,10 +18,12 @@ const BlogDetail = (props) => {
         })
     },[])
   return (
-    <div>
-        <h3>{data?.title}</h3>
-        <img src={data?.mainPictureURL} alt={data?.title} />
-        <p>{data?.description}</p>
+    <div className='blog-detail-section'>
+        <div className='blog-layout'>
+        <h2 className='title2'>{data?.title}</h2>
+        <img className='img-blog' src={data?.mainPictureURL} alt={data?.title} />
+        <p className='description'>{data?.description}</p>
+        </div>
     </div>
   );
 };

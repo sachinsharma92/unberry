@@ -1,0 +1,30 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.blog-detail-section {
+  background-color: #F7F1E5;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom, #1C1C1C 350px, transparent 20%);
+  padding-top: 50px;
+
+  .title2 {
+    font-size: 40px;
+    color: $white;
+  }
+
+  .img-blog {
+    width: 100%;
+  }
+
+  .blog-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .description {
+    padding: 20px 0px;
+    font-size: 16px;
+    margin: 0;
+  }
+}
