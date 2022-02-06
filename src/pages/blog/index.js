@@ -1,7 +1,9 @@
 import { Button, Col, Row } from 'antd';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import LayoutPrimary from '../../common/layoutPrimary';
+import { Mixpanel } from '../../services/mixpanel';
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
@@ -9,30 +11,15 @@ import logoTheme from "../../assets/logo-brown.svg"
 // Styles
 import './styles.scss';
 
-const blogData = [
-  {
-    imgUrl: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGdhbWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    imgUrl: 'https://images.unsplash.com/photo-1627855437292-7efeee237b12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGdhbWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    imgUrl: 'https://images.unsplash.com/photo-1547638375-ebf04735d792?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGdhbWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-  {
-    imgUrl: 'https://images.unsplash.com/photo-1606167668584-78701c57f13d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZXN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-  },
-]
-
 export default function BlogScreen() {
+
+  const [blogs, setBlogs] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(()=>{
+    Mixpanel.track('Blog Page Opened~')
+  }, [])
+
 
   useEffect(() => {
     window.scrollTo({
@@ -40,6 +27,17 @@ export default function BlogScreen() {
       left: 0,
       behavior: "smooth"
     });
+  }, [])
+  
+  useEffect(() => {
+    setIsLoading(true)
+    axios.get('https://cms-api.unberry.com/api/v1/collection').then(res=>{
+      setBlogs(res?.data?.data)
+      setIsLoading(false)
+    }).catch(err=>{
+      console.log('blog data err', err)
+      setIsLoading(false)
+    })
   }, [])
 
   return (
@@ -78,21 +76,21 @@ export default function BlogScreen() {
         {/* ======= Section Why Unberry ======= */}
         <section className='section-style blog-unberry'>
 
-          {blogData.map((item) => (
+          {blogs.map((item) => (
             <div className='border-section'>
               <div className='menu-section' />
               <div className='content-section'>
                 <Row gutter={28}>
                   <Col xs={24} sm={7}>
                     <div className='blog-thumb-image'>
-                      <img src={item.imgUrl} alt="blog-image"></img>
+                      <img src={item.mainPictureURL} alt={item.title}></img>
                     </div>
                   </Col>
                   <Col xs={24} sm={17}>
                     <div className='blog-content-item'>
                       <h3 className='title3'>{item.title}</h3>
                       <p className='description'>{item.description}</p>
-                      <Link to="">Read More</Link>
+                      <Link to={`/blog/${item.id}`}>Read More</Link>
                     </div>
                   </Col>
                 </Row>
