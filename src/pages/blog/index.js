@@ -16,7 +16,7 @@ export default function BlogScreen() {
   const [blogs, setBlogs] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(()=>{
+  useEffect(() => {
     Mixpanel.track('Blog Page Opened~')
   }, [])
 
@@ -28,13 +28,13 @@ export default function BlogScreen() {
       behavior: "smooth"
     });
   }, [])
-  
+
   useEffect(() => {
     setIsLoading(true)
-    axios.get('https://cms-api.unberry.com/api/v1/collection').then(res=>{
+    axios.get('https://cms-api.unberry.com/api/v1/collection').then(res => {
       setBlogs(res?.data?.data)
       setIsLoading(false)
-    }).catch(err=>{
+    }).catch(err => {
       console.log('blog data err', err)
       setIsLoading(false)
     })
