@@ -12,7 +12,7 @@ const BlogDetail = (props) => {
     const [data, setData] = useState({})
 
     useEffect(() => {
-        axios.get(`https://cms-api.unberry.com/api/v1/collection/${id}`).then(res => {
+        axios.get(`https://cms-api.unberry.com/api/v1/article/${id}`).then(res => {
             setData(res?.data?.data)
         }).catch(e => {
             console.log('blog detail err', e)
@@ -27,9 +27,9 @@ const BlogDetail = (props) => {
             <div className='blog-layout'>
                 <a className='btn-back' onClick={() => navigate(-1)}>Back</a>
                 <div>
-                    <h2 className='title2'>{data?.title}</h2>
-                    <img className='img-blog' src={data?.mainPictureURL} alt={data?.title} />
-                    <p className='description'>{data?.description}</p>
+                    <h2 className='title2'>{data?.heading}</h2>
+                    <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
+                    <p className='description' dangerouslySetInnerHTML={{__html:data?.articleContent}}></p>
                 </div>
             </div>
         </div>

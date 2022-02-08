@@ -31,7 +31,7 @@ export default function BlogScreen() {
 
   useEffect(() => {
     setIsLoading(true)
-    axios.get('https://cms-api.unberry.com/api/v1/collection').then(res => {
+    axios.get('https://cms-api.unberry.com/api/v1/article').then(res => {
       setBlogs(res?.data?.data)
       setIsLoading(false)
     }).catch(err => {
@@ -78,13 +78,13 @@ export default function BlogScreen() {
                 <Row gutter={28}>
                   <Col xs={24} sm={7}>
                     <div className='blog-thumb-image'>
-                      <img src={item.mainPictureURL} alt={item.title}></img>
+                      <img src={item.bannerImage} alt={item.heading}></img>
                     </div>
                   </Col>
                   <Col xs={24} sm={17}>
                     <div className='blog-content-item'>
-                      <h3 className='title3'>{item.title}</h3>
-                      <p className='description'>{item.description}</p>
+                      <h3 className='title3'>{item.heading}</h3>
+                      <p className='description'>{item.content}</p>
                       <Link to={`/blog/${item.id}`}>Read More</Link>
                     </div>
                   </Col>
