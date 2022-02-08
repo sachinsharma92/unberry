@@ -18,7 +18,7 @@
     position: relative;
     height: 100%;
     gap: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
@@ -29,20 +29,23 @@
   .box-style {
     position: relative;
     padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include mobile {
       max-width: 91%;
     }
 
-    // &::before {
-    //   position: absolute;
-    //   top: 0;
-    //   left: 25px;
-    //   width: 100%;
-    //   height: 100vh;
-    //   border-right: 1px solid $border-color;
-    //   content: '';
-    // }
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 25px;
+      width: 100%;
+      height: 100vh;
+      border-right: 1px solid $border-color;
+      content: '';
+    }
 
     &:last-child {
       &::before {
@@ -95,6 +98,7 @@
     color: $theme-secondary;
     margin-top: 30px;
     display: block;
+    position: relative;
 
     @include mobile {
       margin-top: 20px;

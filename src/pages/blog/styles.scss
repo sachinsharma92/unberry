@@ -81,6 +81,7 @@
   .section-bury {
     background: #f7f1e5 url("../../assets/bg/gradient-first.svg");
     background-size: cover;
+    border-bottom: 1px solid #DCC797;
 
     .menu-section {
       @include mobile {
@@ -140,6 +141,7 @@
     }
 
     .content-section {
+
       @include mobile {
         padding-top: 40px;
       }
@@ -252,7 +254,7 @@
       .description {
         font-size: 30px;
         max-width: 70%;
-        padding: 30px 40px;
+        padding: 50px 40px;
 
         @include mobile {
           margin-bottom: 0;
@@ -271,7 +273,7 @@
 
   // Section Why Unberry
   .blog-unberry {
-    background-color: #fffcf6;
+    background-color: #F7F1E5;
     min-height: auto;
     flex-direction: column;
 
@@ -331,8 +333,8 @@
     .blog-content-item {
 
       .title3 {
-        font-size: 30px;
-        line-height: 36px;
+        font-size: 26px;
+        line-height: 30px;
         max-width: 70%;
         margin-bottom: 5px;
         letter-spacing: -1px;
@@ -350,6 +352,11 @@
         line-height: 25px;
         letter-spacing: -1px;
         max-width: 80%;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        margin-top: 15px;
 
         @include mobile {
           font-size: 18px;

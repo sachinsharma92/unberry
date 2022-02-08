@@ -28,8 +28,10 @@ const BlogDetail = (props) => {
                 <a className='btn-back' onClick={() => navigate(-1)}>Back</a>
                 <div>
                     <h2 className='title2'>{data?.heading}</h2>
-                    <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
-                    <p className='description' dangerouslySetInnerHTML={{__html:data?.articleContent}}></p>
+                    <div className="img-round">
+                        <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
+                    </div>
+                    <p className='description' dangerouslySetInnerHTML={{ __html: data?.articleContent }}></p>
                 </div>
             </div>
         </div>
