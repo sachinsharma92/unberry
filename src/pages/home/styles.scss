@@ -71,7 +71,6 @@
       white-space: nowrap;
       color: #793700;
       font-size: 16px;
-      letter-spacing: 1.2px;
     }
   }
 
@@ -559,7 +558,7 @@
         line-height: 1.4;
         font-size: 18px;
         color: $white;
-        max-width: 65%;
+        max-width: 55%;
         margin: 0;
         margin-left: 10px;
 
@@ -656,7 +655,7 @@
 
       .jsonSpider {
         position: relative;
-        left: 20px;
+        left: 10px;
         transform: scale(1.1);
       }
 
@@ -789,11 +788,13 @@
   // Section How works Style
   .how-works {
     background: #FFFCF6;
+    min-height: auto;
 
     .menu-section {
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: auto;
     }
 
     .heading-section {
@@ -801,8 +802,7 @@
       align-items: center;
       justify-content: center;
       border-bottom: 1px solid $border-color;
-      flex-grow: 2;
-      padding: 50px 20px 30px;
+      padding: 50px 20px;
 
       @include mobile {
         min-height: auto;
@@ -813,6 +813,7 @@
       .title1 {
         font-size: 42px;
         letter-spacing: -2px;
+        margin-bottom: 0;
 
         @include mobile {
           font-size: 33px;

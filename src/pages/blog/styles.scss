@@ -17,7 +17,6 @@
 
   // Section common Style
   .section-style {
-    min-height: 100vh;
     display: flex;
     overflow: hidden;
 
@@ -41,7 +40,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
     overflow: hidden;
     padding: 60px 0 100px;
     min-width: 50px;
@@ -253,14 +251,13 @@
 
       .description {
         font-size: 30px;
-        width: 460px;
-        padding-left: 50px;
-        margin-bottom: 80px;
+        max-width: 70%;
+        padding: 30px 40px;
 
         @include mobile {
           margin-bottom: 0;
           padding: 50px 20px 30px;
-          width: auto;
+          max-width: 90%;
           font-size: 20px;
         }
       }

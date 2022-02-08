@@ -61,11 +61,6 @@ export default function BlogScreen() {
               </div>
               <Button type="primary" className='btn-demo d-xs-none'>Book Demo</Button>
             </div>
-            <div className='border-section border-bottom-second'>
-              <div className='heading-section'>
-                <h1 className='title1 bold text-gradient'><span className='line-bottom'>Blogs </span> <span className='mob-space'>title</span></h1>
-              </div>
-            </div>
 
             <div className='illustration-section'>
               <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
