@@ -58,7 +58,7 @@
       @include mobile {
         margin-bottom: 20px;
       }
-  
+
       img {
         position: absolute;
         top: 0;
@@ -85,14 +85,10 @@
     }
 
     .icon-style {
-  @include mobile {
-    transform: scale(1.5);
-}
+      @include mobile {
+        transform: scale(1.5);
+      }
     }
-  }
-
-  .img-icon {
-    width: 70px;
   }
 
   .title {
