@@ -1,0 +1,114 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// Section Contact
+.contact-section {
+  background-color: $theme-secondary;
+  min-height: auto;
+
+  .menu-section {
+    min-height: auto;
+
+    @include mobile {
+      background-image: linear-gradient(to bottom, #1C1C1C 280px, white 20%)
+    }
+  }
+
+  .gradint-section {
+    height: 100%;
+    background: url("../../assets/bg/product2.png");
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+
+    @include mobile {
+      height: 280px;
+    }
+
+    .img-full {
+      width: 100%;
+      margin-bottom: -22px;
+      margin-left: 0px;
+      transform: scale(1.2);
+    }
+  }
+
+  .contact-form-section {
+    background: $white;
+    padding: 60px 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mobile {
+      padding: 30px;
+    }
+  }
+
+  .form-style {
+    margin-top: 30px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 25px;
+    color: $theme-primary-dark;
+    font-weight: 400;
+  }
+
+  .title4 {
+    font-size: 28px;
+    line-height: 30px;
+    font-weight: 600;
+
+    @include mobile {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  .text-sm {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #BA4A17;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .ant-input {
+    border: none;
+    border-bottom: 1px solid #C4C2DA;
+    padding: 0;
+    border-radius: 0;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    height: 40px;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      box-shadow: none !important;
+    }
+  }
+
+  .ant-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $theme-primary-dark;
+    margin-top: 20px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .ant-form-item-explain-error {
+    display: none;
+  }
+
+}

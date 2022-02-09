@@ -24,13 +24,17 @@ const BlogDetail = (props) => {
 
     return (
         <div className='blog-detail-section'>
-            <div className='blog-layout'>
-                <a className='btn-back' onClick={() => navigate(-1)}>Back</a>
-                <div>
+            <div className='header-style' style={{ backgroundImage: `url(${data?.bannerImage})` }}>
+                <div className='blog-layout'>
+                    <a className='btn-back' onClick={() => navigate(-1)}>Back</a>
                     <h2 className='title2'>{data?.heading}</h2>
-                    <div className="img-round">
+                </div>
+            </div>
+            <div className='blog-layout'>
+                <div>
+                    {/* <div className="img-round">
                         <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
-                    </div>
+                    </div> */}
                     <p className='description' dangerouslySetInnerHTML={{ __html: data?.articleContent }}></p>
                 </div>
             </div>

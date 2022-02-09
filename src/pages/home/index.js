@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Button, Col, Row, Form, Input, Modal, notification } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
+import { Button, Col, Row, Form, Input, notification } from 'antd';
+import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
 
@@ -14,13 +14,13 @@ import axios from "axios";
 import logoTheme from "../../assets/logo-brown.svg"
 // import illustrationLine from "../../assets/illustration/line-orange.svg";
 import potentialImage from "../../assets/icons/potential.svg";
-import gameImage from "../../assets/illustration/games.svg";
 import videoImage1 from "../../assets/video-img1.png";
 
 import cognitiveJson from "../../assets/json/cognitive.json";
 import behaviouralJson from "../../assets/json/behavioural.json";
 import intelligenceJson from "../../assets/json/intelligence.json";
 import thinkingJson from "../../assets/json/thinking.json";
+import gameCircles from "../../assets/json/game-circles.json";
 
 import demoGroup from "../../assets/demo-group.png";
 
@@ -40,14 +40,11 @@ import psychology from "../../assets/json/psychology.json";
 // Videos here
 import unberryMix from "../../assets/video/unberry-mix.mp4";
 
-
-
 // Styles
 import './styles.scss';
 
 
 export default function HomeScreen() {
-  const navigate = useNavigate();
 
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
@@ -106,20 +103,14 @@ export default function HomeScreen() {
       container: document.querySelector("#behaviouralJson"),
       animationData: thinkingJson
     });
+    lottie.loadAnimation({
+      container: document.querySelector("#gameCircles"),
+      animationData: gameCircles
+    });
+    
   }, []);
 
   const formRef = useRef(null);
-
-  const [isModalCalendly, setIsModalCalendly] = useState(false);
-
-  const showModalCalendly = () => {
-    setIsModalCalendly(true);
-  };
-
-  const hideModalCalendly = () => {
-    setIsModalCalendly(false);
-    formRef.current.resetFields();
-  };
 
   const openNotificationWithIcon = type => {
     notification[type]({
@@ -156,15 +147,15 @@ export default function HomeScreen() {
       'https://assets.calendly.com/assets/external/widget.js'
     );
     head.appendChild(script);
-  }, [isModalCalendly]);
+  }, []);
 
   useEffect(() => {
     const headers = {
       'Content-Type': 'text/plain',
       // 'Access-Control-Allow-Origin': '*'
-  };  
+    };
 
-    axios.get('https://cms-api.unberry.com/api/v1/article', {headers}).then(res => {
+    axios.get('https://cms-api.unberry.com/api/v1/article', { headers }).then(res => {
       setBlogs(res?.data?.data)
     }).catch(err => {
       console.log('blog data err', err)
@@ -223,7 +214,7 @@ export default function HomeScreen() {
         {/* ======= Section Why Unberry ======= */}
         <section className='section-style why-unberry'>
           <div className='menu-section'>
-            <Link to="">02 Why UnBerry</Link>
+            <Link to="">02 Why Unberry</Link>
           </div>
           <div className='content-section'>
             <div className='header-section'>
@@ -276,8 +267,8 @@ export default function HomeScreen() {
                   </div>
                 </Col>
                 <Col xs={24} sm={7}>
-                  <div className='img-center'>
-                    <img src={gameImage} className='product-img1' alt="" />
+                  <div className='game-json-sec'>
+                  <div className='jsonIcon gameJson' id="gameCircles" />
                   </div>
                 </Col>
               </Row>
@@ -405,7 +396,7 @@ export default function HomeScreen() {
         {/* ======= Section Your Workforce ======= */}
         <section className='section-style your-workforce'>
           <div className='menu-section'>
-            <Link to="">06 Why UnBerry</Link>
+            <Link to="">06 Why Unberry</Link>
           </div>
           <div className='content-section'>
             <Row>
@@ -429,12 +420,11 @@ export default function HomeScreen() {
           </div>
 
           <div className='content-section'>
-
             <div className='heading-section'>
               <h1 className='title1'>Blog section title goes here</h1>
               <div className='view-all'><Link to="/blog">View All</Link></div>
             </div>
-              <BlogCard data={blogs} />
+            <BlogCard data={blogs} />
           </div>
         </section>
 
@@ -471,7 +461,7 @@ export default function HomeScreen() {
                 >
                   <Form.Item
                     name="name"
-                  rules={[{ required: true, }]}
+                    rules={[{ required: true, }]}
                   >
                     <Input placeholder='Enter Name'
                     //  value={name} onChange={e => setName(e.target.value)}
@@ -480,14 +470,14 @@ export default function HomeScreen() {
 
                   <Form.Item
                     name="email"
-                  rules={[{ type: 'email', required: true,}]}
+                    rules={[{ type: 'email', required: true, }]}
                   >
                     <Input placeholder='Enter Email' />
                   </Form.Item>
 
                   <Form.Item
                     name="designation"
-                  rules={[{ required: true,}]}
+                    rules={[{ required: true, }]}
                   >
                     <Input placeholder='Role at company' />
                   </Form.Item>
@@ -498,14 +488,6 @@ export default function HomeScreen() {
                     </Button>
                   </Form.Item>
                 </Form>
-
-                {/* <Modal centered visible={isModalCalendly} footer={false} onCancel={hideModalCalendly}>
-                  <div
-                    className="calendly-inline-widget"
-                    data-url={'https://calendly.com/unberry/30min'}
-                    style={{ minWidth: 320, height: '90vh' }}
-                  />
-                </Modal> */}
               </div>
             </Col>
           </Row>
