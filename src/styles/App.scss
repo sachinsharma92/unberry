@@ -318,3 +318,45 @@ p {
     justify-content: flex-start;
   }
 }
+
+// how work Card
+.how-work-card {
+  // slick-dots-bottom
+  .slick-dots-bottom {
+    bottom: 22px;
+
+    @include mobile {
+      bottom: 10px; 
+    }
+
+    li {
+      width: 10px !important;
+      height: 10px !important;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      button {
+        background: none;
+        height: 10px;
+        width: 10px;
+        background: #2F1601;
+      }
+    }
+  }
+
+  .slick-active {
+
+    button {
+      width: 10px;
+      background: #2F1601 !important;
+    }
+  }
+
+  .slick-dots {
+    margin-left: 20px;
+    justify-content: flex-start;
+  }
+}

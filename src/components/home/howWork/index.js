@@ -1,34 +1,58 @@
+import React, { useEffect } from 'react';
 import { Carousel } from 'antd';
-import React from 'react';
-import workImg1 from "../../../assets/icons/work-img1.svg";
-import workImg2 from "../../../assets/icons/work-img2.svg";
-import workImg3 from "../../../assets/icons/work-img3.svg";
+import lottie from "lottie-web";
+
+import playRemotely from "../../../assets/json/play-remotely.json";
+import customBenchmarks from "../../../assets/json/custom-benchmarks.json";
+import detailedReports from "../../../assets/json/detailed-reports.json";
+
+import playRemotelyIcon from "../../../assets/json/play-remotely.gif";
+import customBenchmarksIcon from "../../../assets/json/custom-benchmarks.gif";
+import detailedReportsIcon from "../../../assets/json/detailed-reports.gif";
 
 // Styles
 import './styles.scss';
 
-const mediaboxData = [
+
+export default function HowWorkCard() {
+  const mediaboxData = [
   {
     number: '1',
     title: 'We create your custom screening benchmarks for assesment',
     description: 'To find out what ‘good’ looks like in each role within the company.',
-    imgUrl: workImg1,
+    lottieID: "playRemotely",
+    mobileIcon: playRemotelyIcon,
   },
   {
     number: '2',
     title: 'Candidates play remotely and get assessed immediately',
     description: 'A link with the automated Unberry gameplay takes care of everything.',
-    imgUrl: workImg2,
+    lottieID: "customBenchmarks",
+    mobileIcon: customBenchmarksIcon,
   },
   {
     number: '3',
     title: 'You get detailed reports with relevant, predictive insights',
     description: 'To identify right job-fits and high potential candidates early in the process',
-    imgUrl: workImg3,
+    lottieID: "detailedReports",
+    mobileIcon: detailedReportsIcon,
   }
 ]
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: document.querySelector("#playRemotely"),
+      animationData: playRemotely
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#customBenchmarks"),
+      animationData: customBenchmarks
+    });
+    lottie.loadAnimation({
+      container: document.querySelector("#detailedReports"),
+      animationData: detailedReports
+    });
 
-export default function HowWorkCard() {
+  }, []);
   return (
     <div className='how-work-card'>
       <div className='media-section d-xs-none'>
@@ -44,7 +68,7 @@ export default function HowWorkCard() {
               {item.description}
             </div>
             <div className='img-sec'>
-              <img src={item.imgUrl} alt="" />
+              <div className='jsonIcon icon-style' id={item.lottieID} />
             </div>
           </div>
         ))}
@@ -65,7 +89,7 @@ export default function HowWorkCard() {
                 {item.description}
               </div>
               <div className='img-sec'>
-                <img src={item.imgUrl} alt="" />
+                <img src={item.mobileIcon} className='jsonIcon icon-style' id={item.lottieID} />
               </div>
             </div>
           ))}

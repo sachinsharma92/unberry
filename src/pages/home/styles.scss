@@ -498,7 +498,7 @@
 
       @include mobile {
         width: 100vw;
-        height: 200px;
+        height: 230px;
       }
 
       video {
@@ -511,7 +511,7 @@
         z-index: 1;
 
         @include mobile {
-          width: 232px;
+          width: 272px;
           left: -40px;
           top: 11px;
         }
@@ -910,11 +910,11 @@
         }
       }
 
-      .img-sec {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+      // .img-sec {
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+      // }
 
       img {
         margin-top: 40px;

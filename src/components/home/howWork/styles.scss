@@ -18,7 +18,7 @@
     padding: 50px 30px;
     
     @include mobile {
-      padding: 50px 60px 50px 20px;
+      padding: 50px 60px 20px 20px;
     }
 
     &:nth-child(2) {
@@ -74,15 +74,11 @@
   .img-sec {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
+    justify-content: flex-start;
+    margin-top: 20px;
 
-  img {
-    margin-top: 30px;
-    max-height: 210px;
-
-    @include mobile {
-      width: 100%;
+    .icon-style {
+      width: 270px;
     }
   }
 }

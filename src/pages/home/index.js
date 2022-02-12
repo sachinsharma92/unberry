@@ -15,27 +15,23 @@ import logoTheme from "../../assets/logo-brown.svg"
 // import illustrationLine from "../../assets/illustration/line-orange.svg";
 import potentialImage from "../../assets/icons/potential.svg";
 import videoImage1 from "../../assets/video-img1.png";
+import demoGroup from "../../assets/demo-group.png";
 
 import cognitiveJson from "../../assets/json/cognitive.json";
 import behaviouralJson from "../../assets/json/behavioural.json";
 import intelligenceJson from "../../assets/json/intelligence.json";
 import thinkingJson from "../../assets/json/thinking.json";
 import gameCircles from "../../assets/json/game-circles.json";
-
-import demoGroup from "../../assets/demo-group.png";
-
-
-// Lottie Animation
 import bannerJson from "../../assets/json/banner.json";
 import focusJson from "../../assets/json/focus.json";
 import hireJson from "../../assets/json/hire.json";
 import bestfitJson from "../../assets/json/bestfit.json";
 import spiderGraph from "../../assets/json/spider-graph.json";
-
 import dynamicJson from "../../assets/json/dynamic.json";
 import beyondJson from "../../assets/json/beyond.json";
 import exhaustiveJson from "../../assets/json/exhaustive.json";
 import psychology from "../../assets/json/psychology.json";
+
 
 // Videos here
 import unberryMix from "../../assets/video/unberry-mix.mp4";
@@ -47,6 +43,7 @@ import './styles.scss';
 export default function HomeScreen() {
 
   const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector("#lottie-banner"),
@@ -107,7 +104,6 @@ export default function HomeScreen() {
       container: document.querySelector("#gameCircles"),
       animationData: gameCircles
     });
-    
   }, []);
 
   const formRef = useRef(null);
@@ -268,7 +264,7 @@ export default function HomeScreen() {
                 </Col>
                 <Col xs={24} sm={7}>
                   <div className='game-json-sec'>
-                  <div className='jsonIcon gameJson' id="gameCircles" />
+                    <div className='jsonIcon gameJson' id="gameCircles" />
                   </div>
                 </Col>
               </Row>
