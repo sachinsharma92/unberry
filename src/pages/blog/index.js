@@ -18,7 +18,7 @@ export default function BlogScreen() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    Mixpanel.track('Blog Page Opened')
+    Mixpanel.track('All Blogs Opened, Path: /blog')
   }, [])
 
 

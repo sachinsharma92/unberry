@@ -38,6 +38,7 @@ import unberryMix from "../../assets/video/unberry-mix.mp4";
 
 // Styles
 import './styles.scss';
+import { Mixpanel } from '../../services/mixpanel';
 
 
 export default function HomeScreen() {
@@ -45,6 +46,8 @@ export default function HomeScreen() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
+    Mixpanel.track('Unberry Home Page Opened, Path: /')
+
     lottie.loadAnimation({
       container: document.querySelector("#lottie-banner"),
       animationData: bannerJson
@@ -129,6 +132,7 @@ export default function HomeScreen() {
       )
       .then((response) => {
         handleClick();
+        Mixpanel.track('Demo Booked');
       })
       .catch((err) => {
         openNotificationWithIcon('error');
@@ -330,7 +334,7 @@ export default function HomeScreen() {
               </Col>
             </Row>
 
-            <div className='gradient-section'>
+           <div className='gradient-section'>
               <Row>
                 <Col sm={17}>
                   <div className='profile-boxes'>

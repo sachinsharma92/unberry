@@ -5,6 +5,7 @@ import demoGroup from "../../assets/demo-group.png";
 
 // Styles
 import './styles.scss';
+import { Mixpanel } from '../../services/mixpanel';
 
 
 export default function DemoForm(props) {
@@ -31,6 +32,7 @@ export default function DemoForm(props) {
       )
       .then((response) => {
         handleClick();
+        Mixpanel.track('Demo Booked');
       })
       .catch((err) => {
         openNotificationWithIcon('error');
