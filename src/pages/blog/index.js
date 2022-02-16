@@ -64,7 +64,7 @@ export default function BlogScreen() {
             </div>
 
             <div className='illustration-section'>
-              <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retail and delelop talent</p>
+              <p className='description'>Combining Game technology, Data science, & Neuroscience to disrupt the way companies recruit, retain and delelop talent</p>
             </div>
           </div>
         </section>

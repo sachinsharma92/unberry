@@ -201,7 +201,7 @@ export default function HomeScreen() {
             </div>
 
             <div className='illustration-section'>
-              <p className='description'>Combining game technology, data science & neuroscience to disrupt the way companies recruit, retail and develop talent</p>
+              <p className='description'>Combining game technology, data science & neuroscience to disrupt the way companies recruit, retain and develop talent.</p>
               <div className='banner-lottie' id="lottie-banner" />
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function HomeScreen() {
                     {/* <img src={hiresImage} alt="" /> */}
                     <div className='jsonIcon icon2' id="hires2" />
                     <h4 className='title4'>Avoid bad hires</h4>
-                    <p className='description'>Improve the efficiency in hiring. Reduce time to hire by 45% and cost to hire by 88%</p>
+                    <p className='description'>Improve the efficiency in Hiring. Reduce time to hire by 45% and cost to hire by 28%</p>
                   </div>
                 </Col>
 
@@ -315,7 +315,7 @@ export default function HomeScreen() {
                 <div className='heading-section'>
                   <div className='text-sec'>
                     <p className='description'>The Competency Traits</p>
-                    <h1 className='title1'>New age traits for <br /> modern workplace</h1>
+                    <h1 className='title1'>New age traits for <br /> modern workplaces</h1>
                   </div>
                 </div>
               </Col>
@@ -325,7 +325,7 @@ export default function HomeScreen() {
                 </div>
 
                 <div className='boxes-description hide-on-desktop'>
-                  <p className='description'>We report cognitive and personality traits to predict real-world outcomes, all based on neuroscience and psychology principles.</p>
+                  <p className='description'>We report performance on key workplace traits that predict job-fit and potential, backed by data and science.</p>
                 </div>
               </Col>
             </Row>
