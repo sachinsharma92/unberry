@@ -410,7 +410,7 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Blog ======= */}
-        <section className='section-style blog-section'>
+        {/* <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
           </div>
@@ -422,7 +422,7 @@ export default function HomeScreen() {
             </div>
             <BlogCard data={blogs} />
           </div>
-        </section>
+        </section> */}
 
         {/* ======= Section Contact ======= */}
         <section className='section-style contact-section' id="bookDemo">
