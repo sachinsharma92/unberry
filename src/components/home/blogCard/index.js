@@ -6,7 +6,6 @@ import './styles.scss';
 import { Link } from 'react-router-dom';
 
 export default function BlogCard(data) {
-  console.log("🚀 ~ file: index.js ~ line 9 ~ BlogCard ~ data", data)
   return (
     <div className='blog-card'>
       <div className='grid-layout d-xs-none'>

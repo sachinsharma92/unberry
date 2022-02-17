@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './styles.scss'
+import { Mixpanel } from '../../services/mixpanel';
 
 const BlogDetail = (props) => {
 
@@ -14,6 +15,7 @@ const BlogDetail = (props) => {
     useEffect(() => {
         axios.get(`https://cms-api.unberry.com/api/v1/article/${id}`).then(res => {
             setData(res?.data?.data)
+            Mixpanel.track(`Blog Opened: ${res?.data?.data?.heading}`);
         }).catch(e => {
             console.log('blog detail err', e)
         })
