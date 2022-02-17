@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="4wMoS5YqfF0DyNHr--nI4Z5iWUdka8KPYiBiCQGv5EA" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -15,6 +16,17 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-303682441-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-303682441-1");
+    </script>
 
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
