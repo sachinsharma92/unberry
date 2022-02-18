@@ -133,6 +133,9 @@ export default function HomeScreen() {
       .then((response) => {
         handleClick();
         Mixpanel.track('Demo Booked');
+        window.dataLayer.push({
+          event: 'demoBooked',
+        })
       })
       .catch((err) => {
         openNotificationWithIcon('error');

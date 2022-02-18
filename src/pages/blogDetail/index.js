@@ -16,6 +16,11 @@ const BlogDetail = (props) => {
         axios.get(`https://cms-api.unberry.com/api/v1/article/${id}`).then(res => {
             setData(res?.data?.data)
             Mixpanel.track(`Blog Opened: ${res?.data?.data?.heading}`);
+            window.dataLayer.push({
+                event: 'blogOpened',
+                category: 'blog',
+                label: res?.data?.data?.heading
+              })
         }).catch(e => {
             console.log('blog detail err', e)
         })
