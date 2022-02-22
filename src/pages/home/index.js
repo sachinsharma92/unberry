@@ -167,7 +167,7 @@ export default function HomeScreen() {
 
 
   const handleClick = () => {
-    window.open('https://calendly.com/unberry/30min');
+    window.open('https://calendly.com/unberry/product-demo');
   }
 
   return (
