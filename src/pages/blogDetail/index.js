@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import './styles.scss'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { Mixpanel } from '../../services/mixpanel';
+
+import './styles.scss'
 
 const BlogDetail = (props) => {
 
@@ -42,7 +46,7 @@ const BlogDetail = (props) => {
                     {/* <div className="img-round">
                         <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
                     </div> */}
-                    <p className='description' dangerouslySetInnerHTML={{ __html: data?.articleContent }}></p>
+                    <ReactMarkdown className='description' children={data?.articleContent} rehypePlugins={[rehypeRaw]}  remarkPlugins={[remarkGfm]}/>,
                 </div>
             </div>
         </div>
