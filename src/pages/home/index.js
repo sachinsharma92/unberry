@@ -7,7 +7,8 @@ import lottie from "lottie-web";
 import HowWorkCard from '../../components/home/howWork';
 import WorkforceCard from '../../components/home/workforceCard';
 import BlogCard from '../../components/home/blogCard';
-
+import { Mixpanel } from '../../services/mixpanel';
+import ThankModal from '../../components/thankModal';
 import axios from "axios";
 
 // Images
@@ -38,12 +39,18 @@ import unberryMix from "../../assets/video/unberry-mix.mp4";
 
 // Styles
 import './styles.scss';
-import { Mixpanel } from '../../services/mixpanel';
+
 
 
 export default function HomeScreen() {
 
   const [blogs, setBlogs] = useState([]);
+
+  const [isThankModal, setThankModal] = useState(false);
+  const thankToggleModal = () => {
+    setThankModal(!isThankModal);
+  };
+  
 
   useEffect(() => {
     Mixpanel.track('Unberry Home Page Opened, Path: /')
@@ -131,7 +138,12 @@ export default function HomeScreen() {
         }
       )
       .then((response) => {
-        handleClick();
+        // handleClick();
+        setThankModal(true);
+        setTimeout(() => {
+          setThankModal(false);
+        }, 3000);
+
         Mixpanel.track('Demo Booked');
         window.dataLayer.push({
           event: 'demoBooked',
@@ -165,10 +177,9 @@ export default function HomeScreen() {
     })
   }, [])
 
-
-  const handleClick = () => {
-    window.open('https://calendly.com/unberry/product-demo');
-  }
+  // const handleClick = () => {
+  //   window.open('https://calendly.com/unberry/product-demo');
+  // }
 
   return (
     <div className='home-section-style'>
@@ -337,7 +348,7 @@ export default function HomeScreen() {
               </Col>
             </Row>
 
-           <div className='gradient-section'>
+            <div className='gradient-section'>
               <Row>
                 <Col sm={17}>
                   <div className='profile-boxes'>
@@ -417,7 +428,7 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Blog ======= */}
-        {/* <section className='section-style blog-section'>
+        <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
           </div>
@@ -429,7 +440,7 @@ export default function HomeScreen() {
             </div>
             <BlogCard data={blogs} />
           </div>
-        </section> */}
+        </section>
 
         {/* ======= Section Contact ======= */}
         <section className='section-style contact-section' id="bookDemo">
@@ -496,6 +507,8 @@ export default function HomeScreen() {
           </Row>
         </section>
       </LayoutPrimary>
+
+      <ThankModal visible={isThankModal} onCancel={thankToggleModal}/>
     </div>
   )
 }

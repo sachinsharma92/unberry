@@ -6,10 +6,18 @@ import demoGroup from "../../assets/demo-group.png";
 // Styles
 import './styles.scss';
 import { Mixpanel } from '../../services/mixpanel';
+import ThankModal from '../thankModal';
 
 
 export default function DemoForm(props) {
   const [blogs, setBlogs] = useState([]);
+
+  const [isThankModal, setThankModal] = useState(false);
+  const thankToggleModal = () => {
+    setThankModal(!isThankModal);
+  };
+  
+
   const formRef = useRef(null);
   const openNotificationWithIcon = type => {
     notification[type]({
@@ -31,7 +39,12 @@ export default function DemoForm(props) {
         }
       )
       .then((response) => {
-        handleClick();
+        // handleClick();
+        setThankModal(true);
+        setTimeout(() => {
+          setThankModal(false);
+        }, 3000);
+        
         Mixpanel.track('Demo Booked');
         window.dataLayer.push({
           event: 'demoBooked',
@@ -133,6 +146,8 @@ export default function DemoForm(props) {
           </div>
         </Col>
       </Row>
+
+      <ThankModal visible={isThankModal} onCancel={thankToggleModal}/>
     </section>
   )
 }
