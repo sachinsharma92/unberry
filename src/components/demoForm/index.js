@@ -1,24 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Button, Col, Row, Form, Input, notification } from 'antd';
 import axios from "axios";
+import { Mixpanel } from '../../services/mixpanel';
+import ThankModal from '../thankModal';
 import demoGroup from "../../assets/demo-group.png";
 
 // Styles
 import './styles.scss';
-import { Mixpanel } from '../../services/mixpanel';
-import ThankModal from '../thankModal';
-
 
 export default function DemoForm(props) {
-  const [blogs, setBlogs] = useState([]);
-
   const [isThankModal, setThankModal] = useState(false);
   const thankToggleModal = () => {
     setThankModal(!isThankModal);
   };
   
-
   const formRef = useRef(null);
+
   const openNotificationWithIcon = type => {
     notification[type]({
       message: 'Error',
@@ -40,6 +37,7 @@ export default function DemoForm(props) {
       )
       .then((response) => {
         // handleClick();
+        formRef.current.resetFields();
         setThankModal(true);
         Mixpanel.track('Demo Booked');
         window.dataLayer.push({
@@ -61,23 +59,10 @@ export default function DemoForm(props) {
     head.appendChild(script);
   }, []);
 
-  useEffect(() => {
-    const headers = {
-      'Content-Type': 'text/plain',
-      // 'Access-Control-Allow-Origin': '*'
-    };
 
-    axios.get('https://cms-api.unberry.com/api/v1/article', { headers }).then(res => {
-      setBlogs(res?.data?.data)
-    }).catch(err => {
-      console.log('blog data err', err)
-    })
-  }, [])
-
-
-  const handleClick = () => {
-    window.open('https://calendly.com/unberry/product-demo');
-  }
+  // const handleClick = () => {
+  //   window.open('https://calendly.com/unberry/product-demo');
+  // }
 
   return (
     <section className='section-style contact-section' id={props.id} >

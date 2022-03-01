@@ -39,6 +39,7 @@ import unberryMix from "../../assets/video/unberry-mix.mp4";
 
 // Styles
 import './styles.scss';
+import DemoForm from '../../components/demoForm';
 
 
 
@@ -46,7 +47,7 @@ export default function HomeScreen() {
 
   const [blogs, setBlogs] = useState([]);
 
-  const [isThankModal, setThankModal] = useState(true);
+  const [isThankModal, setThankModal] = useState(false);
   const thankToggleModal = () => {
     setThankModal(!isThankModal);
   };
@@ -116,49 +117,49 @@ export default function HomeScreen() {
     });
   }, []);
 
-  const formRef = useRef(null);
+  // const formRef = useRef(null);
 
-  const openNotificationWithIcon = type => {
-    notification[type]({
-      message: 'Error',
-      description:
-        'Oops! Something went wrong',
-    });
-  };
+  // const openNotificationWithIcon = type => {
+  //   notification[type]({
+  //     message: 'Error',
+  //     description:
+  //       'Oops! Something went wrong',
+  //   });
+  // };
 
-  const bookADemo = (values) => {
-    axios
-      .post(
-        "https://prod-api.unberry.com/api/query/v1/create-query",
-        values, // the data to post'
-        {
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      )
-      .then((response) => {
-        // handleClick();
-        setThankModal(true);
-        Mixpanel.track('Demo Booked');
-        window.dataLayer.push({
-          event: 'demoBooked',
-        })
-      })
-      .catch((err) => {
-        openNotificationWithIcon('error');
-      });
-  }
+  // const bookADemo = (values) => {
+  //   axios
+  //     .post(
+  //       "https://prod-api.unberry.com/api/query/v1/create-query",
+  //       values, // the data to post'
+  //       {
+  //         headers: {
+  //           "Content-type": "application/json",
+  //         },
+  //       }
+  //     )
+  //     .then((response) => {
+  //       // handleClick();
+  //       setThankModal(true);
+  //       Mixpanel.track('Demo Booked');
+  //       window.dataLayer.push({
+  //         event: 'demoBooked',
+  //       })
+  //     })
+  //     .catch((err) => {
+  //       openNotificationWithIcon('error');
+  //     });
+  // }
 
-  useEffect(() => {
-    const head = document.querySelector('head');
-    const script = document.createElement('script');
-    script.setAttribute(
-      'src',
-      'https://assets.calendly.com/assets/external/widget.js'
-    );
-    head.appendChild(script);
-  }, []);
+  // useEffect(() => {
+  //   const head = document.querySelector('head');
+  //   const script = document.createElement('script');
+  //   script.setAttribute(
+  //     'src',
+  //     'https://assets.calendly.com/assets/external/widget.js'
+  //   );
+  //   head.appendChild(script);
+  // }, []);
 
   useEffect(() => {
     const headers = {
@@ -172,10 +173,6 @@ export default function HomeScreen() {
       console.log('blog data err', err)
     })
   }, [])
-
-  // const handleClick = () => {
-  //   window.open('https://calendly.com/unberry/product-demo');
-  // }
 
   return (
     <div className='home-section-style'>
@@ -439,69 +436,7 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Contact ======= */}
-        <section className='section-style contact-section' id="bookDemo">
-          <div className='menu-section'></div>
-          <Row className='w-100'>
-            <Col xs={24} sm={16}>
-              <div className='gradint-section'>
-                <img src={demoGroup} className='img-full' alt="" />
-              </div>
-            </Col>
-            <Col xs={24} sm={8}>
-              <div className='contact-form-section'>
-                <div className='content'>
-                  <p className='text-sm'>Book a demo</p>
-                  <h4 className='title4'>Take the guesswork out…</h4>
-                  <p className='description'>Transform the way you hire - by taking out inefficiencies and biases. By switching to a smarter, unbiased, tech-driven and experiential way of hiring.</p>
-                </div>
-
-                <Form
-                  name="basic"
-                  autoComplete="off"
-                  layout="vertical"
-                  className='form-style'
-                  onFinish={bookADemo}
-                  preserve={false}
-                  ref={formRef}
-                  initialValues={{
-                    name: '',
-                    email: '',
-                    designation: ''
-                  }}
-                >
-                  <Form.Item
-                    name="name"
-                    rules={[{ required: true, }]}
-                  >
-                    <Input placeholder='Enter Name'
-                    //  value={name} onChange={e => setName(e.target.value)}
-                    />
-                  </Form.Item>
-
-                  <Form.Item
-                    name="email"
-                    rules={[{ type: 'email', required: true, }]}
-                  >
-                    <Input placeholder='Enter Email' />
-                  </Form.Item>
-
-                  <Form.Item
-                    name="designation"
-                    rules={[{ required: true, }]}
-                  >
-                    <Input placeholder='Role at company' />
-                  </Form.Item>
-
-                  <Form.Item>
-                    <Button type="primary" htmlType="submit" >
-                      Get Started
-                    </Button>
-                  </Form.Item>
-                </Form>
-              </div>
-            </Col>
-          </Row>
-        </section>
+        <DemoForm id="bookDemo"/>
       </LayoutPrimary>
 
       <ThankModal visible={isThankModal} onCancel={thankToggleModal}/>
