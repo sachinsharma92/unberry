@@ -46,7 +46,7 @@ export default function HomeScreen() {
 
   const [blogs, setBlogs] = useState([]);
 
-  const [isThankModal, setThankModal] = useState(false);
+  const [isThankModal, setThankModal] = useState(true);
   const thankToggleModal = () => {
     setThankModal(!isThankModal);
   };
@@ -140,10 +140,6 @@ export default function HomeScreen() {
       .then((response) => {
         // handleClick();
         setThankModal(true);
-        setTimeout(() => {
-          setThankModal(false);
-        }, 3000);
-
         Mixpanel.track('Demo Booked');
         window.dataLayer.push({
           event: 'demoBooked',

@@ -41,10 +41,6 @@ export default function DemoForm(props) {
       .then((response) => {
         // handleClick();
         setThankModal(true);
-        setTimeout(() => {
-          setThankModal(false);
-        }, 3000);
-        
         Mixpanel.track('Demo Booked');
         window.dataLayer.push({
           event: 'demoBooked',
