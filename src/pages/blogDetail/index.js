@@ -24,7 +24,7 @@ const BlogDetail = (props) => {
                 event: 'blogOpened',
                 category: 'blog',
                 label: res?.data?.data?.heading
-              })
+            })
         }).catch(e => {
             console.log('blog detail err', e)
         })
@@ -41,13 +41,11 @@ const BlogDetail = (props) => {
                     <h2 className='title2'>{data?.heading}</h2>
                 </div>
             </div>
-            <div className='blog-layout'>
-                <div>
-                    {/* <div className="img-round">
+            <div className='markdown-layout'>
+                {/* <div className="img-round">
                         <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
                     </div> */}
-                    <ReactMarkdown className='description' children={data?.articleContent} rehypePlugins={[rehypeRaw]}  remarkPlugins={[remarkGfm]}/>,
-                </div>
+                <ReactMarkdown className='markdown-style' children={data?.articleContent} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />,
             </div>
         </div>
     );

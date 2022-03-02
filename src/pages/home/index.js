@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Button, Col, Row, Form, Input, notification } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Button, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 import LayoutPrimary from '../../common/layoutPrimary';
 import lottie from "lottie-web";
@@ -10,13 +10,13 @@ import BlogCard from '../../components/home/blogCard';
 import { Mixpanel } from '../../services/mixpanel';
 import ThankModal from '../../components/thankModal';
 import axios from "axios";
+import DemoForm from '../../components/demoForm';
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
 // import illustrationLine from "../../assets/illustration/line-orange.svg";
 import potentialImage from "../../assets/icons/potential.svg";
 import videoImage1 from "../../assets/video-img1.png";
-import demoGroup from "../../assets/demo-group.png";
 
 import cognitiveJson from "../../assets/json/cognitive.json";
 import behaviouralJson from "../../assets/json/behavioural.json";
@@ -39,7 +39,6 @@ import unberryMix from "../../assets/video/unberry-mix.mp4";
 
 // Styles
 import './styles.scss';
-import DemoForm from '../../components/demoForm';
 
 
 
@@ -421,7 +420,7 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Blog ======= */}
-        {/* <section className='section-style blog-section'>
+        <section className='section-style blog-section'>
           <div className='menu-section'>
             <Link to="">07 Blogs</Link>
           </div>
@@ -433,7 +432,7 @@ export default function HomeScreen() {
             </div>
             <BlogCard data={blogs} />
           </div>
-        </section> */}
+        </section>
 
         {/* ======= Section Contact ======= */}
         <DemoForm id="bookDemo"/>
