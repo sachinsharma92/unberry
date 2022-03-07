@@ -35,7 +35,7 @@ const BlogDetail = (props) => {
 
     return (
         <div className='blog-detail-section'>
-            <div className='header-style' style={{ backgroundImage: `url(${data?.bannerImage})` }}>
+            <div className='header-style'>
                 <div className='blog-layout'>
                     <a className='btn-back' onClick={() => navigate(-1)}>Back</a>
                     <h2 className='title2'>{data?.heading}</h2>

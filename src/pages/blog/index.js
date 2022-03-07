@@ -77,12 +77,12 @@ export default function BlogScreen() {
               <div className='menu-section' />
               <div className='content-section'>
                 <Row gutter={28} align="middle">
-                  <Col xs={24} sm={10}>
+                  <Col xs={24} sm={8}>
                     <div className='blog-thumb-image'>
                       <img src={item.bannerImage} alt={item.heading}></img>
                     </div>
                   </Col>
-                  <Col xs={24} sm={14}>
+                  <Col xs={24} sm={16}>
                     <div className='blog-content-item'>
                       <h3 className='title3'>{item.heading}</h3>
                       <p className='description'>{item.content}</p>
