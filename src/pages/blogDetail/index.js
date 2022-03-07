@@ -8,6 +8,8 @@ import { Mixpanel } from '../../services/mixpanel';
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
+import arrowNext from "../../assets/icons/arrow-next.svg"
+
 
 import './styles.scss'
 import { Button } from 'antd'
@@ -39,12 +41,12 @@ const BlogDetail = (props) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth"
-    });
-  }, [])
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth"
+		});
+	}, [])
 
 	return (
 		<>
@@ -56,7 +58,7 @@ const BlogDetail = (props) => {
 							<Button type="primary" href="#bookDemo" className='btn-demo'>Book Demo</Button>
 						</div>
 						<div>
-							<a className='btn-back' onClick={() => navigate(-1)}>Back</a>
+							<a className='btn-back' onClick={() => navigate(-1)}> <img src={arrowNext}></img>Back</a>
 							<h2 className='title2'>{data?.heading}</h2>
 						</div>
 					</div>
