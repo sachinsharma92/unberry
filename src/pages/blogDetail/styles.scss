@@ -3,12 +3,12 @@
 @import "../../styles/variables/mixins";
 
 .blog-detail-section {
-  background-color: #F7F1E5;
+  background: #FFFCF6;
   min-height: 100vh;
 
   .title2 {
     font-size: 40px;
-    color: $white;
+    // color: $white;
 
     @include mobile {
       font-size: 35px;
@@ -19,20 +19,35 @@
     height: 300px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     position: relative;
     overflow: hidden;
-    background-color: $white;
+    background: url('../../assets/bg/bg4.png');
+    background-size: cover;
 
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 0px;
-      width: 100%;
-      height: 100%;
-      content: '';
-      background-color: rgba($black, 0.8);
-    }
+    // &::after {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0px;
+    //   width: 100%;
+    //   height: 100%;
+    //   content: '';
+    //   background-color: rgba($black, 0.8);
+    // }
   }
+
+  .info-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 0;
+  }
+
+  // .logo-white {
+  //   filter: contrast(0) brightness(100);
+  // }
 
   .blog-layout {
     width: 1000px;
