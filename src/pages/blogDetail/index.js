@@ -17,10 +17,10 @@ import DemoForm from '../../components/demoForm'
 
 const BlogDetail = (props) => {
 
-    const location = useLocation();
-    
-    
-	const { pathname, state} = useLocation()
+	const location = useLocation();
+
+
+	const { pathname, state } = useLocation()
 	let pathArr = pathname?.split('/')
 	let id = pathArr[pathArr?.length - 1]
 
@@ -35,7 +35,7 @@ const BlogDetail = (props) => {
 				category: 'blog',
 				label: res?.data?.data?.heading
 			})
-            document.title =  `Unberry | ${res?.data?.data?.heading || 'Blog'}`
+			document.title = `Unberry | ${res?.data?.data?.heading || 'Blog'}`
 		}).catch(e => {
 			console.log('blog detail err', e)
 		})
@@ -53,11 +53,11 @@ const BlogDetail = (props) => {
 	}, [])
 
 
-    const seoModifiedHtml = (html) => {
-       return `<div itemprop="description">
+	const seoModifiedHtml = (html) => {
+		return `<div itemprop="description">
                 ${html}
-                </div>` 
-    }
+                </div>`
+	}
 
 	return (
 		<>
@@ -70,16 +70,15 @@ const BlogDetail = (props) => {
 						</div>
 						<div>
 							<a className='btn-back'
-                                onClick={() => {
-                                    if(state?.backTo) {
-                                        navigate(state?.backTo)
-                                    }else {
-                                        navigate('/')
-                                    }
-                                }}
-                            
-                            >
-                                <img src={arrowNext} />Back</a>
+								onClick={() => {
+									if (state?.backTo) {
+										navigate(state?.backTo)
+									} else {
+										navigate('/')
+									}
+								}}
+							>
+								<img src={arrowNext} />Back</a>
 							<h2 className='title2' itemprop="headline">{data?.heading}</h2>
 						</div>
 					</div>
@@ -88,7 +87,7 @@ const BlogDetail = (props) => {
 					{/* <div className="img-round">
                         <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
                     </div> */}
-					    <ReactMarkdown className='markdown-style' children={data?.articleContent} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />,
+					<ReactMarkdown className='markdown-style' children={data?.articleContent} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />,
 				</div>
 			</div>
 			<DemoForm id="bookDemo" />

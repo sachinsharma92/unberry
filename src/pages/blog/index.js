@@ -17,9 +17,9 @@ export default function BlogScreen() {
   const [blogs, setBlogs] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-  
+
   useEffect(() => {
     document.title = "Unberry | Blogs"
     Mixpanel.track('All Blogs Opened, Path: /blog')
@@ -48,7 +48,6 @@ export default function BlogScreen() {
   return (
     <div className='blog-page-style'>
       <LayoutPrimary>
-
         <div className='mobile-header'>
           <Link to="/"><img src={logoTheme} className='logo-white' alt="logo" /></Link>
           <Button type="primary" href="#bookDemo" className='btn-demo'>Book Demo</Button>
@@ -90,7 +89,7 @@ export default function BlogScreen() {
                     <div className='blog-content-item'>
                       <h3 className='title3'>{item.heading}</h3>
                       <p className='description'>{item.content}</p>
-                      <Link to={`/blog/${item.id}`} state={{backTo: pathname}}>Read More</Link>
+                      <Link to={`/blog/${item.id}`} state={{ backTo: pathname }}>Read More</Link>
                     </div>
                   </Col>
                 </Row>
@@ -99,7 +98,7 @@ export default function BlogScreen() {
           ))}
         </section>
 
-        <DemoForm id="bookDemo"/>
+        <DemoForm id="bookDemo" />
       </LayoutPrimary>
     </div>
   )
