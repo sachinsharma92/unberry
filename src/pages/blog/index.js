@@ -58,7 +58,7 @@ export default function BlogScreen() {
           <div className='content-section'>
             <div className='border-section border-bottom-first'>
               <div className='heading-section'>
-                <h1 className='title1 text-gradient'><span className='mob-space'>Blog title</span></h1>
+                <h1 className='title1 text-gradient'><span className='mob-space'>Inside Unberry</span></h1>
               </div>
               <Button type="primary" href="#bookDemo" className='btn-demo d-xs-none'>Book Demo</Button>
             </div>

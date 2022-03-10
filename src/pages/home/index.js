@@ -427,7 +427,7 @@ export default function HomeScreen() {
 
           <div className='content-section'>
             <div className='heading-section'>
-              <h1 className='title1'>Blog section title goes here</h1>
+              <h1 className='title1'>Inside Unberry</h1>
               <div className='view-all'><Link to="/blog">View All</Link></div>
             </div>
             <BlogCard data={blogs} />

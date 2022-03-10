@@ -195,17 +195,39 @@ p {
       padding: 20px;
       display: flex;
       justify-content: center;
-      flex-direction: column;
+      justify-content: space-between;
 
       @include mobile {
         margin-left: 29px;
       }
     }
 
+    .icon {
+      width: 30px;
+      height: 30px;
+      margin-left: 15px;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .copyright-section {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
     .copyright {
       margin-bottom: 0;
       font-size: 12px;
       margin-top: 5px;
+    }
+
+    .social-sec {
+      display: flex;
+      align-items: center;
     }
   }
 }
