@@ -5,12 +5,12 @@ import { Carousel } from 'antd';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 
-export default function BlogCard(data) {
+const BlogCard = ({data, currentPath}) => {
   return (
     <div className='blog-card'>
       <div className='grid-layout d-xs-none'>
-        {data?.data?.map((item) => (
-          <Link to={`/blog/${item.id}`}>
+        {data?.map((item) => (
+          <Link to={`/blog/${item.id}`} state={{backTo: currentPath}}>
             <div className='box-style'>
               <div className='img-sec'>
                 <img src={item.bannerImage} alt="" />
@@ -45,3 +45,6 @@ export default function BlogCard(data) {
     </div>
   )
 }
+
+
+export default BlogCard;

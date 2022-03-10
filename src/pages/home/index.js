@@ -11,6 +11,7 @@ import { Mixpanel } from '../../services/mixpanel';
 import ThankModal from '../../components/thankModal';
 import axios from "axios";
 import DemoForm from '../../components/demoForm';
+import { useLocation } from 'react-router-dom';
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
@@ -51,8 +52,10 @@ export default function HomeScreen() {
     setThankModal(!isThankModal);
   };
   
+  const {pathname} = useLocation();
 
   useEffect(() => {
+    document.title = 'Unberry'
     Mixpanel.track('Unberry Home Page Opened, Path: /')
 
     lottie.loadAnimation({
@@ -430,7 +433,7 @@ export default function HomeScreen() {
               <h1 className='title1'>Blog section title goes here</h1>
               <div className='view-all'><Link to="/blog">View All</Link></div>
             </div>
-            <BlogCard data={blogs} />
+            <BlogCard data={blogs} currentPath={pathname} />
           </div>
         </section>
 

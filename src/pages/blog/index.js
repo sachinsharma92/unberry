@@ -1,6 +1,6 @@
 import { Button, Col, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import LayoutPrimary from '../../common/layoutPrimary';
 import { Mixpanel } from '../../services/mixpanel';
@@ -17,7 +17,11 @@ export default function BlogScreen() {
   const [blogs, setBlogs] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
+  const {pathname} = useLocation();
+
+  
   useEffect(() => {
+    document.title = "Unberry | Blogs"
     Mixpanel.track('All Blogs Opened, Path: /blog')
   }, [])
 
@@ -73,20 +77,20 @@ export default function BlogScreen() {
         <section className='section-style blog-unberry'>
 
           {blogs.map((item) => (
-            <div className='border-section'>
+            <div itemscope='' itemtype='https://schema.org/Blog' className='border-section'>
               <div className='menu-section' />
               <div className='content-section'>
                 <Row gutter={28} align="middle">
                   <Col xs={24} sm={8}>
-                    <div className='blog-thumb-image'>
-                      <img src={item.bannerImage} alt={item.heading}></img>
+                    <div className='blog-thumb-image' itemscope="" itemtype="https://schema.org/ImageObject">
+                      <img itemprop='url' src={item.bannerImage} alt={item.heading}></img>
                     </div>
                   </Col>
                   <Col xs={24} sm={16}>
                     <div className='blog-content-item'>
                       <h3 className='title3'>{item.heading}</h3>
                       <p className='description'>{item.content}</p>
-                      <Link to={`/blog/${item.id}`}>Read More</Link>
+                      <Link to={`/blog/${item.id}`} state={{backTo: pathname}}>Read More</Link>
                     </div>
                   </Col>
                 </Row>

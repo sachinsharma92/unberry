@@ -4,7 +4,7 @@ import axios from 'axios'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import { Mixpanel } from '../../services/mixpanel';
+import { Mixpanel } from '../../services/mixpanel'
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
@@ -17,7 +17,10 @@ import DemoForm from '../../components/demoForm'
 
 const BlogDetail = (props) => {
 
-	const { pathname } = useLocation()
+    const location = useLocation();
+    
+    
+	const { pathname, state} = useLocation()
 	let pathArr = pathname?.split('/')
 	let id = pathArr[pathArr?.length - 1]
 
@@ -32,6 +35,7 @@ const BlogDetail = (props) => {
 				category: 'blog',
 				label: res?.data?.data?.heading
 			})
+            document.title =  `Unberry | ${res?.data?.data?.heading || 'Blog'}`
 		}).catch(e => {
 			console.log('blog detail err', e)
 		})
@@ -48,9 +52,16 @@ const BlogDetail = (props) => {
 		});
 	}, [])
 
+
+    const seoModifiedHtml = (html) => {
+       return `<div itemprop="description">
+                ${html}
+                </div>` 
+    }
+
 	return (
 		<>
-			<div className='blog-detail-section'>
+			<div className='blog-detail-section' itemscope="" itemtype="https://schema.org/BlogPosting">
 				<div className='header-style'>
 					<div className='blog-layout'>
 						<div className='info-section'>
@@ -58,16 +69,26 @@ const BlogDetail = (props) => {
 							<Button type="primary" href="#bookDemo" className='btn-demo'>Book Demo</Button>
 						</div>
 						<div>
-							<a className='btn-back' onClick={() => navigate(-1)}> <img src={arrowNext}></img>Back</a>
-							<h2 className='title2'>{data?.heading}</h2>
+							<a className='btn-back'
+                                onClick={() => {
+                                    if(state?.backTo) {
+                                        navigate(state?.backTo)
+                                    }else {
+                                        navigate('/')
+                                    }
+                                }}
+                            
+                            >
+                                <img src={arrowNext} />Back</a>
+							<h2 className='title2' itemprop="headline">{data?.heading}</h2>
 						</div>
 					</div>
 				</div>
-				<div className='markdown-layout'>
+				<div className='markdown-layout' itemprop="description">
 					{/* <div className="img-round">
                         <img className='img-blog' src={data?.bannerImage} alt={data?.heading} />
                     </div> */}
-					<ReactMarkdown className='markdown-style' children={data?.articleContent} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />,
+					    <ReactMarkdown className='markdown-style' children={data?.articleContent} rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} />,
 				</div>
 			</div>
 			<DemoForm id="bookDemo" />
