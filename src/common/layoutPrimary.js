@@ -1,8 +1,9 @@
 import React from 'react'
 import { Layout, } from 'antd';
-import logoFooter from "../assets/logo-brown.svg"
-import linkedin from "../assets/icons/linkedin.png"
-import instagram from "../assets/icons/instagram.png"
+import logoFooter from "../assets/logo-brown.svg";
+import linkedin from "../assets/icons/linkedin.png";
+import instagram from "../assets/icons/instagram.png";
+import twitter from "../assets/icons/twitter.png";
 
 const { Content, Footer } = Layout;
 
@@ -22,8 +23,9 @@ export default function LayoutPrimary(props) {
           </div>
 
           <div className='social-sec'>
-            <a href=""><img className='icon' src={linkedin} /></a>
-            <a href=""><img  className='icon'src={instagram} /></a>
+            <a href="https://www.linkedin.com/company/unberry/" target="_blank"><img className='icon' src={linkedin} /></a>
+            <a href="https://www.instagram.com/unberry_official/" target="_blank"><img  className='icon'src={instagram} /></a>
+            <a href="https://twitter.com/UnberryHQ" target="_blank"><img  className='icon'src={twitter} /></a>
           </div>
         </div>
       </Footer>}
