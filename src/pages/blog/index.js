@@ -87,8 +87,8 @@ export default function BlogScreen() {
                   </Col>
                   <Col xs={24} sm={16}>
                     <div className='blog-content-item'>
-                      <h3 className='title3'>{item.heading}</h3>
-                      <p className='description'>{item.content}</p>
+                      <div className='title3'>{item.heading}</div>
+                      <div className='description'>{item.content}</div>
                       <Link to={`/blog/${item.id}`} state={{ backTo: pathname }}>Read More</Link>
                     </div>
                   </Col>
