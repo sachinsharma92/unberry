@@ -107,14 +107,9 @@
       align-items: flex-start;
 
       @include mobile {
-        font-size: 50px;
+        font-size: 45px;
         letter-spacing: -2px;
-        flex-direction: column;
-      }
-
-      @include iphone5 {
-        font-size: 50px;
-        letter-spacing: -2px;
+        font-weight: 400;
       }
 
       &.bold {
@@ -138,6 +133,11 @@
     .text-gradient {
       background: -webkit-linear-gradient(top, rgba($theme-primary-dark, 1) 80px, rgba(#c95632, 1));
       @include clip-text;
+      
+      @include mobile {
+        background: -webkit-linear-gradient(top, rgba($theme-primary-dark, 1) 20px, rgba(#c95632, 1));
+        @include clip-text;
+      }
     }
 
     .content-section {
@@ -306,7 +306,7 @@
       padding: 50px 45px;
 
       @include mobile {
-        padding: 50px 20px;
+        padding: 30px 20px;
       }
     }
 
@@ -340,6 +340,7 @@
         max-width: 70%;
         margin-bottom: 5px;
         letter-spacing: -1px;
+        font-weight: 500;
 
         @include mobile {
           font-size: 20px;

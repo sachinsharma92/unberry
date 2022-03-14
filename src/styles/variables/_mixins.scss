@@ -242,6 +242,7 @@ $desktop-width-lg: 1500px;
 @mixin clip-text() {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline;
 }
 
 // primary shadow
