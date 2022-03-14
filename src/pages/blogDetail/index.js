@@ -14,6 +14,7 @@ import arrowNext from "../../assets/icons/arrow-next.svg"
 import './styles.scss'
 import { Button } from 'antd'
 import DemoForm from '../../components/demoForm'
+import LayoutPrimary from '../../common/layoutPrimary'
 
 const BlogDetail = (props) => {
 
@@ -60,7 +61,7 @@ const BlogDetail = (props) => {
 	}
 
 	return (
-		<>
+		<LayoutPrimary footer>
 			<div className='blog-detail-section' itemscope="" itemtype="https://schema.org/BlogPosting">
 				<div className='header-style'>
 					<div className='blog-layout'>
@@ -91,7 +92,7 @@ const BlogDetail = (props) => {
 				</div>
 			</div>
 			<DemoForm id="bookDemo" />
-		</>
+</LayoutPrimary>
 	);
 };
 

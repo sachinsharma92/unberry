@@ -26,9 +26,9 @@ const BlogCard = ({data, currentPath}) => {
 
       {/* On Mobile */}
       <div className='d-xs-visible'>
-        <Carousel autoplay>
-          {data?.data?.map((item) => (
-            <Link to={`/blog/${item.id}`} className='read-more-link'>
+        <Carousel>
+          {data?.map((item) => (
+            <Link to={`/blog/${item.id}`}>
               <div className='box-style'>
                 <div className='img-sec'>
                   <img src={item.bannerImage} alt="" />

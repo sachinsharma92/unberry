@@ -47,7 +47,7 @@ export default function BlogScreen() {
 
   return (
     <div className='blog-page-style'>
-      <LayoutPrimary>
+      <LayoutPrimary footer>
         <div className='mobile-header'>
           <Link to="/"><img src={logoTheme} className='logo-white' alt="logo" /></Link>
           <Button type="primary" href="#bookDemo" className='btn-demo'>Book Demo</Button>
