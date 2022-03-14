@@ -334,7 +334,7 @@
 
     .blog-content-item {
 
-      .title3 {
+      .title {
         font-size: 26px;
         line-height: 30px;
         max-width: 70%;
@@ -365,6 +365,7 @@
         @include mobile {
           font-size: 18px;
           max-width: 100%;
+          letter-spacing: normal;
         }
       }
 
