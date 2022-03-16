@@ -21,7 +21,7 @@ export default function BlogScreen() {
 
 
   useEffect(() => {
-    document.title = "Unberry | Blogs"
+    document.title = "Blogs | Unberry"
     Mixpanel.track('All Blogs Opened, Path: /blog')
   }, [])
 
@@ -89,7 +89,7 @@ export default function BlogScreen() {
                     <div className='blog-content-item'>
                       <div className='title'>{item.heading}</div>
                       <div className='description'>{item.content}</div>
-                      <Link to={`/blog/${item.id}`} state={{ backTo: pathname }}>Read More</Link>
+                      <Link to={`/blog/${item?.heading}`} state={{ backTo: pathname, id: item?.id }}>Read More</Link>
                     </div>
                   </Col>
                 </Row>

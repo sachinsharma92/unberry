@@ -10,7 +10,7 @@ const BlogCard = ({data, currentPath}) => {
     <div className='blog-card'>
       <div className='grid-layout d-xs-none'>
         {data?.map((item) => (
-          <Link to={`/blog/${item.id}`} state={{backTo: currentPath}}>
+          <Link to={`/blog/${item?.heading}`} state={{backTo: currentPath, id: item?.id}}>
             <div className='box-style'>
               <div className='img-sec'>
                 <img src={item.bannerImage} alt="" />
