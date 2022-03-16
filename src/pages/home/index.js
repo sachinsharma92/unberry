@@ -51,8 +51,8 @@ export default function HomeScreen() {
   const thankToggleModal = () => {
     setThankModal(!isThankModal);
   };
-  
-  const {pathname} = useLocation();
+
+  const { pathname } = useLocation();
 
   useEffect(() => {
     document.title = 'Unberry'
@@ -438,10 +438,10 @@ export default function HomeScreen() {
         </section>
 
         {/* ======= Section Contact ======= */}
-        <DemoForm id="bookDemo"/>
+        <DemoForm id="bookDemo" />
       </LayoutPrimary>
 
-      <ThankModal visible={isThankModal} onCancel={thankToggleModal}/>
+      <ThankModal visible={isThankModal} onCancel={thankToggleModal} />
     </div>
   )
 }

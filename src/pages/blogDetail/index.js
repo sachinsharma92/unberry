@@ -5,6 +5,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { Mixpanel } from '../../services/mixpanel'
+import { Button } from 'antd'
+import DemoForm from '../../components/demoForm'
+import LayoutPrimary from '../../common/layoutPrimary'
 
 // Images
 import logoTheme from "../../assets/logo-brown.svg"
@@ -12,17 +15,20 @@ import arrowNext from "../../assets/icons/arrow-next.svg"
 
 
 import './styles.scss'
-import { Button } from 'antd'
-import DemoForm from '../../components/demoForm'
-import LayoutPrimary from '../../common/layoutPrimary'
 
 const BlogDetail = (props) => {
+
+	const location = useLocation();
+
+
 	const { pathname, state } = useLocation()
+	let pathArr = pathname?.split('/')
+	let id = pathArr[pathArr?.length - 1]
 
 	const [data, setData] = useState({})
 
 	useEffect(() => {
-		axios.get(`https://cms-api.unberry.com/api/v1/article/${state?.id}`).then(res => {
+		axios.get(`https://cms-api.unberry.com/api/v1/article/${id}`).then(res => {
 			setData(res?.data?.data)
 			Mixpanel.track(`Blog Opened: ${res?.data?.data?.heading}`);
 			window.dataLayer.push({
@@ -30,7 +36,7 @@ const BlogDetail = (props) => {
 				category: 'blog',
 				label: res?.data?.data?.heading
 			})
-			document.title = `${res?.data?.data?.heading || 'Blog'} | Unberry`
+			document.title = `Unberry | ${res?.data?.data?.heading || 'Blog'}`
 		}).catch(e => {
 			console.log('blog detail err', e)
 		})
@@ -46,6 +52,13 @@ const BlogDetail = (props) => {
 			behavior: "smooth"
 		});
 	}, [])
+
+
+	const seoModifiedHtml = (html) => {
+		return `<div itemprop="description">
+                ${html}
+                </div>`
+	}
 
 	return (
 		<LayoutPrimary footer>
@@ -79,7 +92,7 @@ const BlogDetail = (props) => {
 				</div>
 			</div>
 			<DemoForm id="bookDemo" />
-</LayoutPrimary>
+		</LayoutPrimary>
 	);
 };
 
