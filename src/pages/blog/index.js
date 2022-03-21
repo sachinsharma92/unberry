@@ -64,6 +64,12 @@ export default function BlogScreen() {
     })
   }, [])
 
+  const removeSpaces = (val) => {
+    let arr = val.split(" ");
+    return arr.join("-");
+  }
+
+
   return (
     <div className='blog-page-style'>
 
@@ -111,7 +117,7 @@ export default function BlogScreen() {
                     <div className='blog-content-item'>
                       <div className='title'>{item.heading}</div>
                       <div className='description'>{item.content}</div>
-                      <Link to={`/blog/${item?.heading}`} state={{ backTo: pathname, id: item?.id }}>Read More</Link>
+                      <Link to={`/blog/${removeSpaces(item?.heading)}`} state={{ backTo: pathname, id: item?.id }}>Read More</Link>
                     </div>
                   </Col>
                 </Row>
