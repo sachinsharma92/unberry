@@ -1,12 +1,11 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './styles.scss';
-import { Link } from 'react-router-dom';
 
 const BlogCard = ({data, currentPath}) => {
-
   const removeSpaces = (val) => {
     let arr = val.split(" ");
     return arr.join("-");
